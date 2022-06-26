@@ -1,0 +1,3850 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cabriolet</title>
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">   
+ <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    /> -->
+    
+    <link rel="stylesheet" href="css/swiper-min.css" />
+    <link rel="stylesheet" href="css/datepicker.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/maskedinput.js"></script>
+    <script src="js/swiper-min.js"></script>
+    <script src="js/datepicker.min.js"></script>
+
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(86608429, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/86608429" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+
+
+    <link rel="preload" href="img/logo.svg" as="image"/>
+    <script src="//code.jivo.ru/widget/Os7kkWaM0g" async></script>
+  
+  </head>
+  <body>
+    <header>
+      <div class="header-container flex rounded-2xl fixed w-full z-50 mt-10 ">
+        <div
+          class="menu-cont relative flex justify-between align-middle w-full"
+        >
+          <a href="index.html" class="flex logo">
+            <img class="my-auto" src="img/logo.svg"  style="width:144px; height:60px"/>
+          </a>
+          <nav class="menu flex">
+            <a href="#autoPark">Автопарк</a>
+            <a href="#conditions">Условия</a>
+            <a href="#rullsSec">Правила</a>
+            <a href="#reviews">Отзывы</a>
+            <a href="#contacts">Контакты</a>
+          </nav>
+          <div class="links flex">
+            <a href="tel:+79087370007" class="m-auto h-full phone-call__btn-sec"
+            ><p class="m-auto">Позвонить</p>
+          </a>
+            <a href="#contacts" class="m-auto h-full phone-call__btn"
+              ><p class="m-auto">Заказать звонок</p>
+            </a>
+            <a href="https://wa.me/79087370007" class="m-auto h-full whats-app__btn"
+              ><p class="m-auto">Whats App</p>
+            </a>
+          </div>
+          <div class="burger-menu absolute" id="openMenu">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-menu-wrapper flex">
+        <div class="mobule-menu-container h-screen flex relative m-auto">
+          <img
+            src="img/crossMenu.svg"
+            id="closeMenu"
+            class="close_mobile absolute"
+          />
+          <div class="mobile-menu m-auto">
+            <nav class="menu flex flex-col items-center ">
+              <a href="#autoPark">Автопарк</a>
+              <a href="#conditions">Условия</a>
+              <a href="#rullsSec">Правила</a>
+              <a href="#reviews">Отзывы</a>
+              <a href="#contacts">Контакты</a>
+            </nav>
+            <div class="links flex flex-col">
+              <a href="#contacts" class="m-auto h-full phone-call__btn"
+                ><p class="m-auto">Заказать звонок</p>
+              </a>
+              <a href="https://wa.me/79087370007" class="m-auto h-full"
+                ><p class="m-auto">Whats App</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="icons-fixed-wrapper absolute z-40">
+      <div class="icons-fixed-container relative">
+
+        <!-- <a data-modal="#promotion-modal" id="present" class="absolute icons-fixed present-gift z-50">
+          <img src="img/present-icon.png">
+        </a> -->
+        <a href="https://wa.me/79087370007" class="absolute whatsapp__fixed icons-fixed z-50"><img src="img/whatsap_fixed.svg"></a>
+      </div>
+    </div>
+    <!-- МОДАЛКА СЕРТИФИКАТА -->
+    <div id="certificat-modal" class=" modal-window-container flex
+    w-full
+    justify-center
+    items-center
+    fixed">
+    <div
+    class="
+      modal-window-wrapper
+      flex
+      w-full
+      justify-center
+      items-center
+      relative
+    "
+  >
+  <img
+  src="img/modal_cross.svg"
+  alt="close"
+  class="close-modal-window absolute closeModal"
+ 
+/>
+<div class="modal-window m-auto">
+  <h3 class="text-center">Купить сертификат</h3>
+  <div class="modal-certificat__buttons">
+    <a href="tel:+79087370007" class="m-auto h-full phone-call__certificate">Позвонить</a>
+    <a href="https://wa.me/79087370007" class="m-auto h-full whats-app-certificate__btn"
+    ><p class="m-auto">Whats App</p>
+  </a>
+</div>
+</div>
+</div>
+    </div>
+      <!-- Модалка акция -->
+      <!-- <div id="promotion-modal" class=" modal-window-container flex
+      w-full
+      justify-center
+      items-center
+      fixed">
+      <div
+      class="
+        modal-window-wrapper
+        flex
+        w-full
+        justify-center
+        items-center
+        relative
+      "
+    >
+    <img
+    src="img/modal_cross.svg"
+    alt="close"
+    class="close-modal-window absolute closeModal"
+   
+  />
+  <div class="modal-window m-auto">
+    <h3 class="text-center">Получите скидку 15% за заказ сейчас!</h3>
+    <p>Оставьте email и получите промокод на почту</p>
+    <form action="php/mailPromotion.php">
+      <div class="promotion__inputs">
+        <input type="text" name="promotionFullName" placeholder="Ваше имя">
+        <input type="email" name="promotionEmail" placeholder="Ваш email">
+      </div>
+      <input type="submit" value="Получить скидку">
+    </form>
+  </div>
+  </div>
+      </div> -->
+    <!-- МОДАЛКА ФОРМА -->
+    <div 
+      id="reservation-modal"
+      class="
+        modal-window-container
+        flex
+        w-full
+        justify-center
+        items-center
+        fixed
+      "
+    >
+      <div
+        class="
+          modal-window-wrapper
+          flex
+          w-full
+          justify-center
+          items-center
+          relative
+        "
+      >
+        <img
+          src="img/modal_cross.svg"
+          alt="close"
+          class="close-modal-window absolute closeModal"
+         
+        />
+        <div class="modal-window m-auto">
+          <h3 class="text-center">ЗАБРОНИРОВАТЬ МАШИНУ</h3>
+          <form id="modalForm" action="php/mailCarForm.php" method="post">
+            <div
+              class="
+                f-row
+                flex flex-col
+                sm:flex-row
+                items-center
+                justify-between
+              "
+            >
+              <label>
+                <p>Как вас зовут?*</p>
+                <input
+                  type="text"
+                  placeholder="Ваше имя"
+                  required
+                  id="modalUserName"
+                  name="reserv-user-name"
+                />
+              </label>
+              <label>
+                <p>Введите ваш телефон*</p>
+                <input
+                  type="tel"
+                  class="customerPhoneNumber"
+                  placeholder="+7(---) --- -- --"
+                  required
+                  id="modalCustomerNumber"
+                  name="reserv-user-phone"
+                />
+              </label>
+            </div>
+            <div
+              class="
+                s-row
+                flex flex-col
+                sm:flex-row
+                items-center
+                justify-between
+              "
+            >
+              <label class="relative"
+                ><p>Начало аренды</p>
+                <input
+                  autocomplete="off"
+                  placeholder="__.__.____"
+                  type="text"
+                  name="reserv-start-date"
+                  pattern="[0-9]{2}(.)[0-9]{2}(.)[0-9]{4}"
+                  id="start-date"
+                  title="Введите данные корректно" />
+                <img src="img/calendar.svg" class="absolute"
+              /></label>
+              <label class="relative"
+                ><p>Окончание аренды</p>
+                <input
+                  class="date-rev"
+                  autocomplete="off"
+                  placeholder="__.__.____"
+                  type="text"
+                  name="reserv-end-date"
+                  pattern="[0-9]{2}(.)[0-9]{2}(.)[0-9]{4}"
+                  id="end-date"
+                  title="Введите данные корректно" />
+                <img src="img/calendar.svg" class="absolute"
+              /></label>
+            </div>
+            <p class="text-center sm:text-left">* Обязательные поля</p>
+            <div
+              class="
+                buttons
+                flex
+                m-auto
+                justify-between
+                flex-col
+                sm:flex-row
+                items-center
+                justify-center
+              "
+            >
+              
+              <input
+                type="submit"
+                id="mailSubmit"
+                class="sent_modal over-modal m-auto"
+                value="Забронировать машину"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="gratitude text-center flex flex-col items-center">
+          <div class="img flex m-auto">
+            <img class="m-auto" src="img/check.svg" />
+          </div>
+          <h3>
+            Спасибо. <br>
+            Мы получили вашу заявку
+          </h3>
+          <p>
+            Наш менеджер перезвонит вам в течении 15 мин. для уточнения всех
+            деталей
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="main-background-blur fixed w-screen h-screen"></div>
+
+
+    <a href="tel:+79087370007" class="m-auto h-full fixed phone-call__btn-sec_mobile"
+      ><p class="m-auto">Позвонить</p>
+    </a>
+
+    <div class="page flex flex-col justify-between">
+
+
+
+
+      
+      <main>
+        <section class="first-sec flex relative">
+          <div class="scroll contant flex-col m-auto z-10 animate__animated animate__fadeIn">
+            <h1 class="m-auto">Аренда кабриолетов в Сочи</h1>
+            <a
+              class="w-full h-full flex mx-auto btn-animate to-auto"
+              href="#autoPark"
+              ><p class="m-auto font-bold">В автопарк</p></a
+            >
+          </div>
+          <a href="#arrowYak" class="arrow to-auto absolute z-40"
+            ><img src="img/arrow.svg"
+          /></a>
+        </section>
+        <div id="arrowYak" class="main-cont relative z-40">
+          <section class="second-sec flex" id="autoPark">
+            <div class="contain m-auto w-full relative">
+              <img src="img/parl-l.svg" class="dec absolute" />
+              <img src="img/parl-r.svg" class="dec2 absolute" />
+              <h2 class="text-center lg:text-left element-animation-fade-top animate__animated" >Наш автопарк</h2>
+              <div class="catalog-container">
+                  <div
+                class="catalog  element-animation-fade-left  animate__animated "
+                id="dodgehemi"
+                >
+                <h4 class="car-name">
+                  <span>Dodge Challenger 5.7 HEMI</span>
+                
+                </h4>
+                <div class="sec-car-slider relative mx-auto car-slider-grid flex">
+                  <div
+                      class="
+                        swiper
+                        sec-car-slider-container
+                        m-auto
+                        bmw__x5m-slider-container
+                      "
+                    >
+                      <div class="swiper-wrapper sec-car-slider-wrapper">
+                        <div class="swiper-slide sec-car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/dodge1.webp" type="image/webp">
+                              <img class="m-auto" src="img/dodge1.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide sec-car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/dodge2.webp" type="image/webp">
+                              <img class="m-auto" src="img/dodge2.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide sec-car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/dodge3.webp" type="image/webp">
+                              <img class="m-auto" src="img/dodge3.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide sec-car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/dodge4.webp" type="image/webp">
+                              <img class="m-auto" src="img/dodge4.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide sec-car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/dodge5.webp" type="image/webp">
+                              <img class="m-auto" src="img/dodge5.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide sec-car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/dodge6.webp" type="image/webp">
+                              <img class="m-auto" src="img/dodge6.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide sec-car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/dodge7.webp" type="image/webp">
+                              <img class="m-auto" src="img/dodge7.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="
+                          swiper-button-prev
+                          sec-car-prev
+                          bmw__x5m-slider-prev
+                        "
+                      ></div>
+                      <div
+                        class="
+                          swiper-button-next
+                          sec-car-next
+                          bmw__x5m-slider-next
+                        "
+                      ></div>
+                      <div
+                        class="
+                          swiper-pagination
+                          sec-car-pagination
+                          bmw__x5m-slider-pagination
+                        "
+                      ></div>
+                     
+                    </div>
+                </div>
+                <div
+                class="
+                swiper-container swiper-mini bmw-mini
+                "
+              >
+                <div class="swiper-wrapper sec-car-slider-wrapper">
+                  <div class="swiper-slide sec-car-slider-slide">
+                    <div class="car-slider__img flex">
+                      <picture>
+                        <source srcset="img/dodge1.webp" type="image/webp">
+                        <img class="m-auto" src="img/dodge1.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="swiper-slide sec-car-slider-slide">
+                    <div class="car-slider__img flex">
+                      <picture>
+                        <source srcset="img/dodge2.webp" type="image/webp">
+                        <img class="m-auto" src="img/dodge2.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="swiper-slide sec-car-slider-slide">
+                    <div class="car-slider__img flex">
+                      <picture>
+                        <source srcset="img/dodge3.webp" type="image/webp">
+                        <img class="m-auto" src="img/dodge3.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="swiper-slide sec-car-slider-slide">
+                    <div class="car-slider__img flex">
+                      <picture>
+                        <source srcset="img/dodge4.webp" type="image/webp">
+                        <img class="m-auto" src="img/dodge4.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="swiper-slide sec-car-slider-slide">
+                    <div class="car-slider__img flex">
+                      <picture>
+                        <source srcset="img/dodge5.webp" type="image/webp">
+                        <img class="m-auto" src="img/dodge5.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="swiper-slide sec-car-slider-slide">
+                    <div class="car-slider__img flex">
+                      <picture>
+                        <source srcset="img/dodge6.webp" type="image/webp">
+                        <img class="m-auto" src="img/dodge6.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="swiper-slide sec-car-slider-slide">
+                    <div class="car-slider__img flex">
+                      <picture>
+                        <source srcset="img/dodge7.webp" type="image/webp">
+                        <img class="m-auto" src="img/dodge7.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                </div>
+               
+               
+              </div>
+                    
+                    <div class="stats-wrapper">
+                     <div class="stats flex justify-between">
+                       
+                      <div class="stats-name name">
+                        <p>Коробка:</p>
+                        <p>Двигатель:</p>
+                        <p>Л.С:</p>
+                        <p>Год выпуска:</p>
+                        <p>Кол-во мест:</p>
+                        <p>Цвет:</p>
+                      </div>
+                      <div class="stats">
+                        <p>автомат</p>
+                        <p>5.7 V8  HEMI</p>
+                        <p>420</p>
+                        <p>2019</p>
+                        <p>4</p>
+                        <p class="color__car">Calypso Red</p>
+                      </div>
+                     </div>
+                
+                     <p>Мойка машины в подарок!<br />
+                       </p>
+                    </div>
+                    
+                
+                    <div class="price-info-wrapper">
+                      <div class="price__wrapper relative flex">
+                        <div class="price-name name ">
+                          <p>Цена:</p>
+                        </div>
+                        <div class="price">
+                          <p>25 000 руб./сутки</p>
+                        </div>
+                      </div>
+                      <div class="price-info">
+                        <p>от 2 дней - 24000 руб./сутки</p>
+                          <p>от 3 дней - 23000 руб./сутки</p>
+                      </div>
+                      <div class="price-info">
+                        <h6 >Залог: <span> 50 000 руб.</span> </h6>
+                      </div>
+                      <p class="warning">
+                        ВНИМАНИЕ. Данный автомобиль можно арендовать при стаже
+                        вождения от 5 лет.
+                      </p>
+                    </div>
+                
+                    <div
+                      class="flex justify-between reserv reserv-warning"
+                      id="mustang__greenForm"
+                      method="post"
+                    >
+                      <input
+                        type="number"
+                        placeholder="Кол-во дней аренды"
+                        class="reserv-day-numb"
+                        name="day_numb"
+                        name="reserv-day-nimber"
+                        form="modalForm"
+                      />
+                      <input
+                        type="button"
+                        class="button"
+                        value="Забронировать"
+                        id="mustang__greenBut"
+                        data-modal="#reservation-modal"
+                      />
+                    </div>
+                </div>               
+                <!--  -->
+                <div
+                  class="catalog  element-animation-fade-right  animate__animated "
+                  id="mustang__green"
+                >
+                <h4 class="car-name">
+                  <span>Ford Mustang</span>
+                </h4>
+                  <div class="car-slider car-slider-grid relative mx-auto flex">
+                    <div
+                      class="
+                        swiper
+                        car-slider-container
+                      
+                        mustang__green-container
+                      "
+                    >
+                      <div class="swiper-wrapper car-slider-wrapper">
+                        <div class="swiper-slide car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/IMG_8306.webp" type="image/webp">
+                              <img class="m-auto" src="img/IMG_8306.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/IMG_8307.webp" type="image/webp">
+                              <img class="m-auto" src="img/IMG_8307.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/IMG_8308.webp" type="image/webp">
+                              <img class="m-auto" src="img/IMG_8308.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/IMG_8309.webp" type="image/webp">
+                              <img class="m-auto" src="img/IMG_8309.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/IMG_0804.webp" type="image/webp">
+                              <img class="m-auto" src="img/IMG_0804.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="swiper-button-prev car-prev mustang__green-prev"
+                      ></div>
+                      <div
+                        class="swiper-button-next car-next mustang__green-next"
+                      ></div>
+                      <div
+                        class="
+                          swiper-pagination
+                          car-pagination
+                          mustang__green-pagination
+                        "
+                      ></div>
+                     
+                    </div>
+                   
+                  </div>
+                  <div class="mustang-green-mini swiper-mini swiper-container">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide car-mini-slider-slide">
+                        <div class="car-slider__img flex">
+                          <picture>
+                            <source srcset="img/IMG_8306.webp" type="image/webp">
+                            <img class="m-auto" src="img/IMG_8306.jpg" />
+                          </picture>
+                        </div>
+                      </div>
+                      <div class="swiper-slide car-mini-slider-slide">
+                        <div class="car-slider__img flex">
+                          <picture>
+                            <source srcset="img/IMG_8307.webp" type="image/webp">
+                            <img class="m-auto" src="img/IMG_8307.jpg" />
+                          </picture>
+                        </div>
+                      </div>
+                      <div class="swiper-slide car-mini-slider-slide">
+                        <div class="car-slider__img flex">
+                          <picture>
+                            <source srcset="img/IMG_8308.webp" type="image/webp">
+                            <img class="m-auto" src="img/IMG_8308.jpg" />
+                          </picture>
+                        </div>
+                      </div>
+                      <div class="swiper-slide car-mini-slider-slide">
+                        <div class="car-slider__img flex">
+                          <picture>
+                            <source srcset="img/IMG_8309.webp" type="image/webp">
+                            <img class="m-auto" src="img/IMG_8309.jpg" />
+                          </picture>
+                        </div>
+                      </div>
+                      <div class="swiper-slide car-mini-slider-slide">
+                        <div class="car-slider__img flex">
+                          <picture>
+                            <source srcset="img/IMG_0804.webp" type="image/webp">
+                            <img class="m-auto" src="img/IMG_0804.jpg" />
+                          </picture>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                 
+                      
+                      <div class="stats-wrapper">
+                       <div class="stats flex">
+                         
+                        <div class="stats-name name">
+                          <p>Коробка:</p>
+                          <p>Двигатель:</p>
+                          <p>Л.С :</p>
+                          <p>Год выпуска:</p>
+                          <p>Кол-во мест:</p>
+                          <p>Цвет:</p>
+                        </div>
+                        <div class="stats">
+                          <p>автомат</p>
+                          <p>2.3</p>
+                          <p>317</p>
+                          <p>2017</p>
+                          <p>4</p>
+                          <p class="color__car">Green (зелёный)</p>
+                        </div>
+                       </div>
+                       <p>Мойка машины в подарок! <br>
+                         </p>
+                      </div>
+                      
+
+                      <div class="price-info-wrapper">
+                        <div class="price__wrapper relative flex">
+                          <div class="price-name name ">
+                            <p>Цена:</p>
+                          </div>
+                          <div class="price">
+                            <p>12 000 руб./сутки</p>
+                          </div>
+                        </div>
+                        <div class="price-info">
+                         
+                          <p>от 2 дней - 11000 руб./сутки</p>
+                          <p>от 3 дней - 10000 руб./сутки</p>
+                        </div>
+                        <div class="price-info">
+                          <h6 >Залог: <span> 30 000 руб.</span> </h6>
+                        </div>
+                      </div>
+                  
+                      <div
+                        class="flex justify-between reserv"
+                        id="mustang__greenForm"
+                        method="post"
+                      >
+                        <input
+                          type="number"
+                          placeholder="Кол-во дней аренды"
+                          class="reserv-day-numb"
+                          name="day_numb"
+                          name="reserv-day-nimber"
+                          form="modalForm"
+                        />
+                        <input
+                          type="button"
+                          class="button"
+                          value="Забронировать"
+                          id="mustang__greenBut"
+                          data-modal="#reservation-modal"
+                        />
+                      </div>
+                </div>
+                <!-- ----------------------------------------------------------------- -->
+                <div
+                  class="catalog  element-animation-fade-left  animate__animated "
+                  id="mustang__blue"
+                >
+                <h4 class="car-name">
+                  <span>Ford Mustang</span>
+                  
+                </h4>
+                <div class="sec-car-slider relative mx-auto car-slider-grid flex">
+                  <div
+                    class="
+                      swiper
+                      sec-car-slider-container
+                      mx-auto
+                      mustang__blue-container
+                    "
+                  >
+                    <div class="swiper-wrapper sec-car-slider-wrapper">
+                      <div class="swiper-slide sec-car-slider-slide">
+                        <div class="car-slider__img flex">
+                          <picture>
+                            <source srcset="img/IMG_8301.webp" type="image/webp">
+                            <img class="m-auto" src="img/IMG_8301.jpg" />
+                          </picture>
+                        </div>
+                      </div>
+                      <div class="swiper-slide sec-car-slider-slide">
+                        <div class="car-slider__img flex">
+                          <picture>
+                            <source srcset="img/IMG_8302.webp" type="image/webp">
+                            <img class="m-auto" src="img/IMG_8302.jpg" />
+                          </picture>
+                        </div>
+                      </div>
+                      <div class="swiper-slide sec-car-slider-slide">
+                        <div class="car-slider__img flex">
+                          <picture>
+                            <source srcset="img/IMG_8303.webp" type="image/webp">
+                            <img class="m-auto" src="img/IMG_8303.jpg" />
+                          </picture>
+                        </div>
+                      </div>
+                      <div class="swiper-slide sec-car-slider-slide">
+                        <div class="car-slider__img flex">
+                          <picture>
+                            <source srcset="img/IMG_8304.webp" type="image/webp">
+                            <img class="m-auto" src="img/IMG_8304.jpg" />
+                          </picture>
+                        </div>
+                      </div>
+                      <div class="swiper-slide sec-car-slider-slide">
+                        <div class="car-slider__img flex">
+                          <picture>
+                            <source srcset="img/IMG_2340.webp" type="image/webp">
+                            <img class="m-auto" src="img/IMG_2340.jpg" />
+                          </picture>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="
+                        swiper-button-prev
+                        sec-car-prev
+                        mustang__blue-prev
+                      "
+                    ></div>
+                    <div
+                      class="
+                        swiper-button-next
+                        sec-car-next
+                        mustang__blue-next
+                      "
+                    ></div>
+                    <div
+                      class="
+                        swiper-pagination
+                        sec-car-pagination
+                        mustang__blue-pagination
+                      "
+                    ></div>
+                    
+                  </div>
+                </div>
+                 <div class="swiper-container swiper-mini mustang-blue-mini">
+                  <div class="swiper-wrapper sec-car-slider-wrapper">
+                    <div class="swiper-slide ">
+                      <div class="car-slider__img flex">
+                        <picture>
+                          <source srcset="img/IMG_8301.webp" type="image/webp">
+                          <img class="m-auto" src="img/IMG_8301.jpg" />
+                        </picture>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="car-slider__img flex">
+                        <picture>
+                          <source srcset="img/IMG_8302.webp" type="image/webp">
+                          <img class="m-auto" src="img/IMG_8302.jpg" />
+                        </picture>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="car-slider__img flex">
+                        <picture>
+                          <source srcset="img/IMG_8303.webp" type="image/webp">
+                          <img class="m-auto" src="img/IMG_8303.jpg" />
+                        </picture>
+                      </div>
+                    </div>
+                    <div class="swiper-slide ">
+                      <div class="car-slider__img flex">
+                        <picture>
+                          <source srcset="img/IMG_8304.webp" type="image/webp">
+                          <img class="m-auto" src="img/IMG_8304.jpg" />
+                        </picture>
+                      </div>
+                    </div>
+                    <div class="swiper-slide ">
+                      <div class="car-slider__img flex">
+                        <picture>
+                          <source srcset="img/IMG_2340.webp" type="image/webp">
+                          <img class="m-auto" src="img/IMG_2340.jpg" />
+                        </picture>
+                      </div>
+                    </div>
+                  </div>
+                 </div>
+                      
+                      <div class="stats-wrapper">
+                       <div class="stats flex">
+                         
+                        <div class="stats-name name">
+                          <p>Коробка:</p>
+                          <p>Двигатель:</p>
+                          <p>Л.С :</p>
+                          <p>Год выпуска:</p>
+                          <p>Кол-во мест:</p>
+                          <p>Цвет:</p>
+                        </div>
+                        <div class="stats">
+                          <p>автомат</p>
+                          <p>2.3</p>
+                          <p>317</p>
+                          <p>2017</p>
+                          <p>4</p>
+                          <p class="color__car">Aqua (синий)</p>
+                        </div>
+                       </div>
+
+                       <p>Мойка машины в подарок!<br>
+                         </p>
+                      </div>
+                      
+
+                      <div class="price-info-wrapper">
+                        <div class="price__wrapper relative flex">
+                          <div class="price-name name ">
+                            <p>Цена:</p>
+                          </div>
+                          <div class="price">
+                            <p>12 000 руб./сутки</p>
+                          </div>
+                        </div>
+                        <div class="price-info">
+                         
+                          <p>от 2 дней - 11000 руб./сутки</p>
+                          <p>от 3 дней - 10000 руб./сутки</p>
+                        </div>
+                        <div class="price-info">
+                          <h6 >Залог: <span> 30 000 руб.</span> </h6>
+                        </div>
+                      </div>
+                  
+                      <div
+                        class="flex justify-between reserv"
+                        id="mustang__greenForm"
+                        method="post"
+                      >
+                        <input
+                          type="number"
+                          placeholder="Кол-во дней аренды"
+                          class="reserv-day-numb"
+                          name="day_numb"
+                          name="reserv-day-nimber"
+                          form="modalForm"
+                        />
+                        <input
+                          type="button"
+                          class="button"
+                          value="Забронировать"
+                          id="mustang__greenBut"
+                          data-modal="#reservation-modal"
+                        />
+                      </div>
+                </div>
+
+
+
+                <!-------------------------------------------------------------  -->
+                <div
+                class="catalog  element-animation-fade-right  animate__animated "
+                id="comaro"
+              >
+              <h4 class="car-name">
+                <span>CHEVROLET CAMARO  3.6 </span>
+              </h4>
+                <div class="car-slider car-slider-grid relative mx-auto flex">
+                  <div
+                    class="
+                      swiper
+                      car-slider-container
+                    
+                      comaro-container
+                    "
+                  >
+                    <div class="swiper-wrapper car-slider-wrapper">
+                      <div class="swiper-slide car-slider-slide">
+                        <div class="car-slider__img flex">
+                          <picture>
+                            <source srcset="img/comaro1.webp" type="image/webp">
+                            <img class="m-auto" src="img/comaro1.jpg" />
+                          </picture>
+                        </div>
+                      </div>
+                      <div class="swiper-slide car-slider-slide">
+                        <div class="car-slider__img flex">
+                          <picture>
+                            <source srcset="img/comaro2.webp" type="image/webp">
+                            <img class="m-auto" src="img/comaro2.jpg" />
+                          </picture>
+                        </div>
+                      </div>
+                      <div class="swiper-slide car-slider-slide">
+                        <div class="car-slider__img flex">
+                          <picture>
+                            <source srcset="img/comaro3.webp" type="image/webp">
+                            <img class="m-auto" src="img/comaro3.jpg" />
+                          </picture>
+                        </div>
+                      </div>
+                      <div class="swiper-slide car-slider-slide">
+                        <div class="car-slider__img flex">
+                          <picture>
+                            <source srcset="img/comaro4.webp" type="image/webp">
+                            <img class="m-auto" src="img/comaro4.jpg" />
+                          </picture>
+                        </div>
+                      </div>
+                      <div class="swiper-slide car-slider-slide">
+                        <div class="car-slider__img flex">
+                          <picture>
+                            <source srcset="img/comaro5.webp" type="image/webp">
+                            <img class="m-auto" src="img/comaro5.jpg" />
+                          </picture>
+                        </div>
+                      </div>
+                      <div class="swiper-slide car-slider-slide">
+                        <div class="car-slider__img flex">
+                          <picture>
+                            <source srcset="img/comaro6.webp" type="image/webp">
+                            <img class="m-auto" src="img/comaro6.jpg" />
+                          </picture>
+                        </div>
+                      </div>
+                      <div class="swiper-slide car-slider-slide">
+                        <div class="car-slider__img flex">
+                          <picture>
+                            <source srcset="img/comaro7.webp" type="image/webp">
+                            <img class="m-auto" src="img/comaro7.jpg" />
+                          </picture>
+                        </div>
+                      </div>
+                      <div class="swiper-slide car-slider-slide">
+                        <div class="car-slider__img flex">
+                          <picture>
+                            <source srcset="img/comaro8.webp" type="image/webp">
+                            <img class="m-auto" src="img/comaro8.jpg" />
+                          </picture>
+                        </div>
+                      </div>
+                      <div class="swiper-slide car-slider-slide">
+                        <div class="car-slider__img flex">
+                          <picture>
+                            <source srcset="img/comaro9.webp" type="image/webp">
+                            <img class="m-auto" src="img/comaro9.jpg" />
+                          </picture>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="swiper-button-prev car-prev comaro-prev"
+                    ></div>
+                    <div
+                      class="swiper-button-next car-next comaro-next"
+                    ></div>
+                    <div
+                      class="
+                        swiper-pagination
+                        car-pagination
+                        comaro-pagination
+                      "
+                    ></div>
+                   
+                  </div>
+                 
+                </div>
+                <div class="comaro-mini swiper-mini swiper-container">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide car-mini-slider-slide">
+                      <div class="car-slider__img flex">
+                        <picture>
+                          <source srcset="img/comaro1.webp" type="image/webp">
+                          <img class="m-auto" src="img/comaro1.jpg" />
+                        </picture>
+                      </div>
+                    </div>
+                    <div class="swiper-slide car-mini-slider-slide">
+                      <div class="car-slider__img flex">
+                        <picture>
+                          <source srcset="img/comaro2.webp" type="image/webp">
+                          <img class="m-auto" src="img/comaro2.jpg" />
+                        </picture>
+                      </div>
+                    </div>
+                    <div class="swiper-slide car-mini-slider-slide">
+                      <div class="car-slider__img flex">
+                        <picture>
+                          <source srcset="img/comaro3.webp" type="image/webp">
+                          <img class="m-auto" src="img/comaro3.jpg" />
+                        </picture>
+                      </div>
+                    </div>
+                    <div class="swiper-slide car-mini-slider-slide">
+                      <div class="car-slider__img flex">
+                        <picture>
+                          <source srcset="img/comaro4.webp" type="image/webp">
+                          <img class="m-auto" src="img/comaro4.jpg" />
+                        </picture>
+                      </div>
+                    </div>
+                    <div class="swiper-slide car-mini-slider-slide">
+                      <div class="car-slider__img flex">
+                        <picture>
+                          <source srcset="img/comaro5.webp" type="image/webp">
+                          <img class="m-auto" src="img/comaro5.jpg" />
+                        </picture>
+                      </div>
+                    </div>
+                    <div class="swiper-slide car-mini-slider-slide">
+                      <div class="car-slider__img flex">
+                        <picture>
+                          <source srcset="img/comaro6.webp" type="image/webp">
+                          <img class="m-auto" src="img/comaro6.jpg" />
+                        </picture>
+                      </div>
+                    </div>
+                    <div class="swiper-slide car-mini-slider-slide">
+                      <div class="car-slider__img flex">
+                        <picture>
+                          <source srcset="img/comaro7.webp" type="image/webp">
+                          <img class="m-auto" src="img/comaro7.jpg" />
+                        </picture>
+                      </div>
+                    </div>
+                    <div class="swiper-slide car-mini-slider-slide">
+                      <div class="car-slider__img flex">
+                        <picture>
+                          <source srcset="img/comaro8.webp" type="image/webp">
+                          <img class="m-auto" src="img/comaro8.jpg" />
+                        </picture>
+                      </div>
+                    </div>
+                    <div class="swiper-slide car-mini-slider-slide">
+                      <div class="car-slider__img flex">
+                        <picture>
+                          <source srcset="img/comaro9.webp" type="image/webp">
+                          <img class="m-auto" src="img/comaro9.jpg" />
+                        </picture>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               
+                    
+                    <div class="stats-wrapper">
+                     <div class="stats flex">
+                       
+                      <div class="stats-name name">
+                        <p>Коробка:</p>
+                        <p>Двигатель:</p>
+                        <p>Л.С :</p>
+                        <p>Год выпуска:</p>
+                        <p>Кол-во мест:</p>
+                        <p>Привод:</p>
+
+                        <p>Цвет:</p>
+                      </div>
+                      <div class="stats">
+                        <p>автомат</p>
+                        <p>V6 3.6</p>
+                        <p>345</p>
+                        <p>2017</p>
+                        <p>4</p>
+                        <p>Задний</p>
+                        <p class="color__car">Графитовый</p>
+                      </div>
+                     </div>
+                     <p>Мойка машины в подарок! <br>
+                       </p>
+                    </div>
+                    
+
+                    <div class="price-info-wrapper">
+                      <div class="price__wrapper relative flex">
+                        <div class="price-name name ">
+                          <p>Цена:</p>
+                        </div>
+                        <div class="price">
+                          <p>15 000 руб./сутки</p>
+                        </div>
+                      </div>
+                      <div class="price-info">
+                       
+                        <p>от 2 дней - 14000 руб./сутки</p>
+                        <p>от 3 дней - 13000 руб./сутки</p>
+                      </div>
+                      <div class="price-info">
+                        <h6 >Залог: <span> 30 000 руб.</span> </h6>
+                      </div>
+                    </div>
+                
+                    <div
+                      class="flex justify-between reserv"
+                      id="comaroForm"
+                      method="post"
+                    >
+                      <input
+                        type="number"
+                        placeholder="Кол-во дней аренды"
+                        class="reserv-day-numb"
+                        name="day_numb"
+                        name="reserv-day-nimber"
+                        form="modalForm"
+                      />
+                      <input
+                        type="button"
+                        class="button"
+                        value="Забронировать"
+                        id="comaroBut"
+                        data-modal="#reservation-modal"
+                      />
+                    </div>
+              </div>
+              <!-- ----------------------------------------------- -->
+</div>
+
+
+<div class="new-call">
+  <div class="new-call__container">
+   <div class="new-call__top">
+     <h2 class="new-call__tel">+7 908 737-00-07</h2>
+     <a  class="button" href="tel:+79087370007">Позвонить</a>
+   </div>
+   <p class="new-call__bottom">
+     Вы всегда можете позвонить и задать нам любые вопросы. Мы на связи 24/7 <img class='smile' src="img/smile.svg" >
+   </p>
+  </div>
+ </div>
+ 
+<div class="catalog-container">
+              <!-- ----------------------------------------------------------------- -->
+                <div
+                class="catalog  element-animation-fade-left  animate__animated "
+                id="jaguar"
+              >
+              <h4 class="car-name">
+                <span>Ford Mustang</span>
+                
+              </h4>
+              <div class="sec-car-slider relative mx-auto car-slider-grid flex">
+                <div
+                    class="
+                      swiper
+                      car-slider-container
+                      m-auto
+                      jaguar-slider-container
+                    "
+                  >
+                    <div class="swiper-wrapper car-slider-wrapper">
+                      <div class="swiper-slide car-slider-slide">
+                        <div class="car-slider__img flex">
+                          <picture>
+                            <source srcset="img/jaguar1.webp" type="image/webp">
+                            <img class="m-auto" src="img/jaguar1.jpg" />
+                          </picture>
+                        </div>
+                      </div>
+                      <div class="swiper-slide car-slider-slide">
+                        <div class="car-slider__img flex">
+                          <picture>
+                            <source srcset="img/jaguar2.webp" type="image/webp">
+                            <img class="m-auto" src="img/jaguar2.jpg" />
+                          </picture>
+                        </div>
+                      </div>
+                      <div class="swiper-slide car-slider-slide">
+                        <div class="car-slider__img flex">
+                          <picture>
+                            <source srcset="img/jaguar3.webp" type="image/webp">
+                            <img class="m-auto" src="img/jaguar3.jpg" />
+                          </picture>
+                        </div>
+                      </div>
+                      <div class="swiper-slide car-slider-slide">
+                        <div class="car-slider__img flex">
+                          <picture>
+                            <source srcset="img/jaguar4.webp" type="image/webp">
+                            <img class="m-auto" src="img/jaguar4.jpg" />
+                          </picture>
+                        </div>
+                      </div>
+                      <div class="swiper-slide car-slider-slide">
+                        <div class="car-slider__img flex">
+                          <picture>
+                            <source srcset="img/jaguar5.webp" type="image/webp">
+                            <img class="m-auto" src="img/jaguar5.jpg" />
+                          </picture>
+                        </div>
+                      </div>
+                      <div class="swiper-slide car-slider-slide">
+                        <div class="car-slider__img flex">
+                          <picture>
+                            <source srcset="img/jaguar6.webp" type="image/webp">
+                            <img class="m-auto" src="img/jaguar6.jpg" />
+                          </picture>
+                        </div>
+                      </div>
+                     
+                    </div>
+                    <div
+                      class="swiper-button-prev car-prev jaguar-prev"
+                    ></div>
+                    <div
+                      class="swiper-button-next car-next jaguar-next"
+                    ></div>
+                    <div
+                      class="
+                        swiper-pagination
+                        car-pagination
+                        jaguar-pagination
+                      "
+                    ></div>
+                    
+                  </div>
+              </div>
+              <div
+              class="
+               swiper-container
+               swiper-mini
+               swiper-jaguar-mini
+              "
+            >
+              <div class="swiper-wrapper ">
+                <div class="swiper-slide ">
+                  <div class="car-slider__img flex">
+                    <picture>
+                      <source srcset="img/jaguar1.webp" type="image/webp">
+                      <img class="m-auto" src="img/jaguar1.jpg" />
+                    </picture>
+                  </div>
+                </div>
+                <div class="swiper-slide car-slider-slide">
+                  <div class="car-slider__img flex">
+                    <picture>
+                      <source srcset="img/jaguar2.webp" type="image/webp">
+                      <img class="m-auto" src="img/jaguar2.jpg" />
+                    </picture>
+                  </div>
+                </div>
+                <div class="swiper-slide car-slider-slide">
+                  <div class="car-slider__img flex">
+                    <picture>
+                      <source srcset="img/jaguar3.webp" type="image/webp">
+                      <img class="m-auto" src="img/jaguar3.jpg" />
+                    </picture>
+                  </div>
+                </div>
+                <div class="swiper-slide car-slider-slide">
+                  <div class="car-slider__img flex">
+                    <picture>
+                      <source srcset="img/jaguar4.webp" type="image/webp">
+                      <img class="m-auto" src="img/jaguar4.jpg" />
+                    </picture>
+                  </div>
+                </div>
+                <div class="swiper-slide car-slider-slide">
+                  <div class="car-slider__img flex">
+                    <picture>
+                      <source srcset="img/jaguar5.webp" type="image/webp">
+                      <img class="m-auto" src="img/jaguar5.jpg" />
+                    </picture>
+                  </div>
+                </div>
+                <div class="swiper-slide car-slider-slide">
+                  <div class="car-slider__img flex">
+                    <picture>
+                      <source srcset="img/jaguar6.webp" type="image/webp">
+                      <img class="m-auto" src="img/jaguar6.jpg" />
+                    </picture>
+                  </div>
+                </div>
+               
+              </div>
+             
+              
+            </div>
+                    
+                    <div class="stats-wrapper">
+                     <div class="stats flex">
+                       
+                      <div class="stats-name name">
+                        <p>Коробка:</p>
+                        <p>Двигатель:</p>
+                        <p>Л.С :</p>
+                        <p>Год выпуска:</p>
+                        <p>Кол-во мест:</p>
+                        <p>Цвет:</p>
+                      </div>
+                      <div class="stats">
+                        <p>автомат</p>
+                          <p>2.3</p>
+                          <p>317</p>
+                          <p>2017</p>
+                          <p>4</p>
+                          <p class="color__car">Red (красный)</p>
+                      </div>
+                     </div>
+                     <p>Мойка машины в подарок!<br>
+                       </p>
+                    </div>
+                    
+
+                    <div class="price-info-wrapper">
+                      <div class="price__wrapper relative flex">
+                        <div class="price-name name ">
+                          <p>Цена:</p>
+                        </div>
+                        <div class="price">
+                          <p>13 000 руб./сутки</p>
+                        </div>
+                      </div>
+                      <div class="price-info">
+                        <p>от 2 дней - 12000 руб./сутки</p>
+                        <p>от 3 дней - 11000 руб./сутки</p>
+                      </div>
+                      <div class="price-info">
+                        <h6 >Залог: <span> 30 000 руб.</span> </h6>
+                      </div>
+                    </div>
+                
+                    <div
+                      class="flex justify-between reserv"
+                      id="mustang__greenForm"
+                      method="post"
+                    >
+                      <input
+                        type="number"
+                        placeholder="Кол-во дней аренды"
+                        class="reserv-day-numb"
+                        name="day_numb"
+                        name="reserv-day-nimber"
+                        form="modalForm"
+                      />
+                      <input
+                        type="button"
+                        class="button"
+                        value="Забронировать"
+                        id="mustang__greenBut"
+                        data-modal="#reservation-modal"
+                      />
+                    </div>
+              </div>
+                  <!-- ----------------------------------------------------------------- -->
+                  <div
+                  class="catalog  element-animation-fade-right  animate__animated "
+                  id="fordRedThred"
+                >
+                <h4 class="car-name">
+                  <span>Ford Mustang</span>
+                  
+                </h4>
+                <div class="sec-car-slider relative mx-auto car-slider-grid flex">
+                  <div
+                      class="
+                        swiper
+                        car-slider-container
+                        m-auto
+                        fordRedThred-slider-container
+                      "
+                    >
+                      <div class="swiper-wrapper car-slider-wrapper">
+                        <div class="swiper-slide car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/fordRedThred1.webp" type="image/webp">
+                              <img class="m-auto" src="img/fordRedThred1.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/fordRedThred2.webp" type="image/webp">
+                              <img class="m-auto" src="img/fordRedThred2.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/fordRedThred3.webp" type="image/webp">
+                              <img class="m-auto" src="img/fordRedThred3.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/fordRedThred4.webp" type="image/webp">
+                              <img class="m-auto" src="img/fordRedThred4.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/fordRedThred5.webp" type="image/webp">
+                              <img class="m-auto" src="img/fordRedThred5.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/fordRedThred6.webp" type="image/webp">
+                              <img class="m-auto" src="img/fordRedThred6.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                       
+                      </div>
+                      <div
+                        class="swiper-button-prev car-prev fordRedThred-prev"
+                      ></div>
+                      <div
+                        class="swiper-button-next car-next fordRedThred-next"
+                      ></div>
+                      <div
+                        class="
+                          swiper-pagination
+                          car-pagination
+                          fordRedThred-pagination
+                        "
+                      ></div>
+                      
+                    </div>
+                </div>
+                <div
+                class="
+                 swiper-container
+                 swiper-mini
+                 swiper-fordRedThred-mini
+                "
+              >
+                <div class="swiper-wrapper ">
+                  <div class="swiper-slide ">
+                    <div class="car-slider__img flex">
+                      <picture>
+                        <source srcset="img/fordRedThred1.webp" type="image/webp">
+                        <img class="m-auto" src="img/fordRedThred1.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="swiper-slide car-slider-slide">
+                    <div class="car-slider__img flex">
+                      <picture>
+                        <source srcset="img/fordRedThred2.webp" type="image/webp">
+                        <img class="m-auto" src="img/fordRedThred2.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="swiper-slide car-slider-slide">
+                    <div class="car-slider__img flex">
+                      <picture>
+                        <source srcset="img/fordRedThred3.webp" type="image/webp">
+                        <img class="m-auto" src="img/fordRedThred3.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="swiper-slide car-slider-slide">
+                    <div class="car-slider__img flex">
+                      <picture>
+                        <source srcset="img/fordRedThred4.webp" type="image/webp">
+                        <img class="m-auto" src="img/fordRedThred4.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="swiper-slide car-slider-slide">
+                    <div class="car-slider__img flex">
+                      <picture>
+                        <source srcset="img/fordRedThred5.webp" type="image/webp">
+                        <img class="m-auto" src="img/fordRedThred5.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="swiper-slide car-slider-slide">
+                    <div class="car-slider__img flex">
+                      <picture>
+                        <source srcset="img/fordRedThred6.webp" type="image/webp">
+                        <img class="m-auto" src="img/fordRedThred6.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                 
+                </div>
+               
+                
+              </div>
+                      
+                      <div class="stats-wrapper">
+                       <div class="stats flex">
+                         
+                        <div class="stats-name name">
+                          <p>Коробка:</p>
+                          <p>Двигатель:</p>
+                          <p>Л.С :</p>
+                          <p>Год выпуска:</p>
+                          <p>Кол-во мест:</p>
+                          <p>Цвет:</p>
+                        </div>
+                        <div class="stats">
+                          <p>автомат</p>
+                            <p>2.3</p>
+                            <p>317</p>
+                            <p>2017</p>
+                            <p>4</p>
+                            <p class="color__car">Red (красный)</p>
+                        </div>
+                       </div>
+                       <p>Мойка машины в подарок!<br>
+                         </p>
+                      </div>
+                      
+  
+                      <div class="price-info-wrapper">
+                        <div class="price__wrapper relative flex">
+                          <div class="price-name name ">
+                            <p>Цена:</p>
+                          </div>
+                          <div class="price">
+                            <p>13 000 руб./сутки</p>
+                          </div>
+                        </div>
+                        <div class="price-info">
+                          <p>от 2 дней - 12000 руб./сутки</p>
+                          <p>от 3 дней - 11000 руб./сутки</p>
+                        </div>
+                        <div class="price-info">
+                          <h6 >Залог: <span> 30 000 руб.</span> </h6>
+                        </div>
+                      </div>
+                  
+                      <div
+                        class="flex justify-between reserv"
+                        id="fordRedThredForm"
+                        method="post"
+                      >
+                        <input
+                          type="number"
+                          placeholder="Кол-во дней аренды"
+                          class="reserv-day-numb"
+                          name="day_numb"
+                          name="reserv-day-nimber"
+                          form="modalForm"
+                        />
+                        <input
+                          type="button"
+                          class="button"
+                          value="Забронировать"
+                          id="fordRedThredBut"
+                          data-modal="#reservation-modal"
+                        />
+                      </div>
+                </div>
+                    <!-- ----------------------------------------------------------------- -->
+  <div
+  class="catalog  element-animation-fade-left  animate__animated "
+  id="mustang__red"
+>
+<h4 class="car-name">
+  <span>Ford Mustang</span>
+  
+</h4>
+<div class="sec-car-slider relative mx-auto car-slider-grid flex">
+  <div
+    class="
+      swiper
+      sec-car-slider-container
+      mx-auto
+      mustang__red-container
+    "
+  >
+    <div class="swiper-wrapper sec-car-slider-wrapper">
+      <div class="swiper-slide sec-car-slider-slide">
+        <div class="car-slider__img min-cen flex">
+          <picture>
+            <source srcset="img/redford1.webp" type="image/webp">
+            <img class="m-auto" src="img/redford1.jpg" />
+          </picture>
+        </div>
+      </div>
+      <div class="swiper-slide sec-car-slider-slide">
+        <div class="car-slider__img min-cen flex">
+          <picture>
+            <source srcset="img/redford2.webp" type="image/webp">
+            <img class="m-auto" src="img/redford2.jpg" />
+          </picture>
+        </div>
+      </div>
+      <div class="swiper-slide sec-car-slider-slide">
+        <div class="car-slider__img min-cen flex">
+          <picture>
+            <source srcset="img/redford3.webp" type="image/webp">
+            <img class="m-auto" src="img/redford3.jpg" />
+          </picture>
+        </div>
+      </div>
+      <div class="swiper-slide sec-car-slider-slide">
+        <div class="car-slider__img min-cen flex">
+          <picture>
+            <source srcset="img/redford4.webp" type="image/webp">
+            <img class="m-auto" src="img/redford4.jpg" />
+          </picture>
+        </div>
+      </div>
+      <div class="swiper-slide sec-car-slider-slide">
+        <div class="car-slider__img min-cen flex">
+          <picture>
+            <source srcset="img/redford5.webp" type="image/webp">
+            <img class="m-auto" src="img/redford5.jpg" />
+          </picture>
+        </div>
+      </div>
+    </div>
+    <div
+      class="
+        swiper-button-prev
+        sec-car-prev
+        mustang__red-prev
+      "
+    ></div>
+    <div
+      class="
+        swiper-button-next
+        sec-car-next
+        mustang__red-next
+      "
+    ></div>
+    <div
+      class="
+        swiper-pagination
+        sec-car-pagination
+        mustang__red-pagination
+      "
+    ></div>
+    
+  </div>
+</div>
+ <div class="swiper-container swiper-mini mustang-red-mini">
+  <div class="swiper-wrapper sec-car-slider-wrapper">
+    <div class="swiper-slide ">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/redford1.webp" type="image/webp">
+          <img class="m-auto" src="img/redford1.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/redford2.webp" type="image/webp">
+          <img class="m-auto" src="img/redford2.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/redford3.webp" type="image/webp">
+          <img class="m-auto" src="img/redford3.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide ">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/redford4.webp" type="image/webp">
+          <img class="m-auto" src="img/redford4.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide ">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/redford5.webp" type="image/webp">
+          <img class="m-auto" src="img/redford5.jpg" />
+        </picture>
+      </div>
+    </div>
+  </div>
+ </div>
+      
+      <div class="stats-wrapper">
+       <div class="stats flex">
+         
+        <div class="stats-name name">
+          <p>Коробка:</p>
+          <p>Двигатель:</p>
+          <p>Л.С :</p>
+          <p>Год выпуска:</p>
+          <p>Кол-во мест:</p>
+          <p>Цвет:</p>
+        </div>
+        <div class="stats">
+          <p>автомат</p>
+          <p>2.3</p>
+          <p>317</p>
+          <p>2019</p>
+          <p>4</p>
+          <p class="color__car">Red (красный)</p>
+        </div>
+       </div>
+
+       <p>Мойка машины в подарок!<br>
+         </p>
+      </div>
+      
+
+      <div class="price-info-wrapper">
+        <div class="price__wrapper relative flex">
+          <div class="price-name name ">
+            <p>Цена:</p>
+          </div>
+          <div class="price">
+            <p>15 000 руб./сутки</p>
+          </div>
+        </div>
+        <div class="price-info">
+         
+          <p>от 2 дней - 14000 руб./сутки</p>
+          <p>от 3 дней - 13000 руб./сутки</p>
+        </div>
+        <div class="price-info">
+          <h6 >Залог: <span> 30 000 руб.</span> </h6>
+        </div>
+      </div>
+  
+      <div
+        class="flex justify-between reserv"
+        id="mustang__greenForm"
+        method="post"
+      >
+        <input
+          type="number"
+          placeholder="Кол-во дней аренды"
+          class="reserv-day-numb"
+          name="day_numb"
+          name="reserv-day-nimber"
+          form="modalForm"
+        />
+        <input
+          type="button"
+          class="button"
+          value="Забронировать"
+          id="mustang__greenBut"
+          data-modal="#reservation-modal"
+        />
+      </div>
+</div>
+<!-- ----------------------------------------------- -->
+<div
+class="catalog  element-animation-fade-right  animate__animated "
+id="fordBord"
+>
+<h4 class="car-name">
+<span>Ford Mustang</span>
+
+</h4>
+<div class="sec-car-slider relative mx-auto car-slider-grid flex">
+<div
+  class="
+    swiper
+    sec-car-slider-container
+    mx-auto
+    fordBord-slider-container
+  "
+>
+  <div class="swiper-wrapper sec-car-slider-wrapper">
+    <div class="swiper-slide sec-car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/fordBordo1.webp" type="image/webp">
+          <img class="m-auto" src="img/fordBordo1.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide sec-car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/fordBordo2.webp" type="image/webp">
+          <img class="m-auto" src="img/fordBordo2.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide sec-car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/fordBordo3.webp" type="image/webp">
+          <img class="m-auto" src="img/fordBordo3.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide sec-car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/fordBordo4.webp" type="image/webp">
+          <img class="m-auto" src="img/fordBordo4.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide sec-car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/fordBordo5.webp" type="image/webp">
+          <img class="m-auto" src="img/fordBordo5.jpg" />
+        </picture>
+      </div>
+    </div>
+  </div>
+  <div
+    class="
+      swiper-button-prev
+      sec-car-prev
+      fordBord-prev
+    "
+  ></div>
+  <div
+    class="
+      swiper-button-next
+      sec-car-next
+      fordBord-next
+    "
+  ></div>
+  <div
+    class="
+      swiper-pagination
+      sec-car-pagination
+      fordBord-pagination
+    "
+  ></div>
+  
+</div>
+</div>
+<div class="swiper-container swiper-mini fordBord-mini">
+<div class="swiper-wrapper sec-car-slider-wrapper">
+  <div class="swiper-slide ">
+    <div class="car-slider__img flex">
+      <picture>
+        <source srcset="img/fordBordo1.webp" type="image/webp">
+        <img class="m-auto" src="img/fordBordo1.jpg" />
+      </picture>
+    </div>
+  </div>
+  <div class="swiper-slide">
+    <div class="car-slider__img flex">
+      <picture>
+        <source srcset="img/fordBordo2.webp" type="image/webp">
+        <img class="m-auto" src="img/fordBordo2.jpg" />
+      </picture>
+    </div>
+  </div>
+  <div class="swiper-slide">
+    <div class="car-slider__img flex">
+      <picture>
+        <source srcset="img/fordBordo3.webp" type="image/webp">
+        <img class="m-auto" src="img/fordBordo3.jpg" />
+      </picture>
+    </div>
+  </div>
+  <div class="swiper-slide ">
+    <div class="car-slider__img flex">
+      <picture>
+        <source srcset="img/fordBordo4.webp" type="image/webp">
+        <img class="m-auto" src="img/fordBordo4.jpg" />
+      </picture>
+    </div>
+  </div>
+  <div class="swiper-slide ">
+    <div class="car-slider__img flex">
+      <picture>
+        <source srcset="img/fordBordo5.webp" type="image/webp">
+        <img class="m-auto" src="img/fordBordo5.jpg" />
+      </picture>
+    </div>
+  </div>
+</div>
+</div>
+    
+    <div class="stats-wrapper">
+     <div class="stats flex">
+       
+      <div class="stats-name name">
+        <p>Коробка:</p>
+        <p>Двигатель:</p>
+        <p>Л.С :</p>
+        <p>Год выпуска:</p>
+        <p>Кол-во мест:</p>
+        <p>Цвет:</p>
+      </div>
+      <div class="stats">
+        <p>автомат</p>
+        <p>2.3</p>
+        <p>317</p>
+        <p>2017</p>
+        <p>4</p>
+        <p class="color__car">Бордовый металлик</p>
+      </div>
+     </div>
+
+     <p>Мойка машины в подарок!<br>
+       </p>
+    </div>
+    
+
+    <div class="price-info-wrapper">
+      <div class="price__wrapper relative flex">
+        <div class="price-name name ">
+          <p>Цена:</p>
+        </div>
+        <div class="price">
+          <p>13 000 руб./сутки</p>
+        </div>
+      </div>
+      <div class="price-info">
+       
+        <p>от 2 дней - 12000 руб./сутки</p>
+        <p>от 3 дней - 11000 руб./сутки</p>
+      </div>
+      <div class="price-info">
+        <h6 >Залог: <span> 30 000 руб.</span> </h6>
+      </div>
+    </div>
+
+    <div
+      class="flex justify-between reserv"
+      id="fordBordForm"
+      method="post"
+    >
+      <input
+        type="number"
+        placeholder="Кол-во дней аренды"
+        class="reserv-day-numb"
+        name="day_numb"
+        form="modalForm"
+      />
+      <input
+        type="button"
+        class="button"
+        value="Забронировать"
+        id="fordBordBut"
+        data-modal="#reservation-modal"
+      />
+    </div>
+</div>
+
+<!-- ----------------------------------------------- -->
+<div
+class="catalog  element-animation-fade-left  animate__animated "
+id="porscheBoxterRed"
+>
+<h4 class="car-name">
+  <span>Porsche Boxter S 718</span>
+    
+  
+</h4>
+<div class="sec-car-slider relative mx-auto car-slider-grid flex">
+  <div
+  class="
+    swiper
+    car-slider-container
+    m-auto
+    porche__boxter__red-slider-container
+  "
+>
+  <div class="swiper-wrapper car-slider-wrapper">
+    <div class="swiper-slide car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/poschred1.webp" type="image/webp">
+          <img class="m-auto" src="img/poschred1.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/poschred2.webp" type="image/webp">
+          <img class="m-auto" src="img/poschred2.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/poschred3.webp" type="image/webp">
+          <img class="m-auto" src="img/poschred3.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/poschred4.webp" type="image/webp">
+          <img class="m-auto" src="img/poschred4.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/poschred5.webp" type="image/webp">
+          <img class="m-auto" src="img/poschred5.jpg" />
+        </picture>
+      </div>
+    </div>
+   
+  </div>
+  <div
+    class="swiper-button-prev car-prev porche__boxter__red-prev"
+  ></div>
+  <div
+    class="swiper-button-next car-next porche__boxter__red-next"
+  ></div>
+  <div
+    class="
+      swiper-pagination
+      car-pagination
+      porche__boxter__red-pagination
+    "
+  ></div>
+ 
+</div>
+</div>
+<div class="swiper-container swiper-mini porche-red-mini">
+  <div class="swiper-wrapper car-slider-wrapper">
+    <div class="swiper-slide car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/poschred1.webp" type="image/webp">
+          <img class="m-auto" src="img/poschred1.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/poschred2.webp" type="image/webp">
+          <img class="m-auto" src="img/poschred2.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/poschred3.webp" type="image/webp">
+          <img class="m-auto" src="img/poschred3.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/poschred4.webp" type="image/webp">
+          <img class="m-auto" src="img/poschred4.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/poschred5.webp" type="image/webp">
+          <img class="m-auto" src="img/poschred5.jpg" />
+        </picture>
+      </div>
+    </div>
+   
+  </div>
+</div>
+    
+    <div class="stats-wrapper">
+     <div class="stats flex">
+       
+      <div class="stats-name name">
+        <p>Коробка:</p>
+        <p>Двигатель:</p>
+        <p>Л.С :</p>
+           
+        <p>Год выпуска:</p>
+        <p>Кол-во мест:</p>
+     
+        <p>Привод:</p>
+        
+        <p>Цвет:</p>
+       
+
+      </div>
+      <div class="stats">
+        <p>автомат</p>
+        <p>2.5 турбо</p>
+        <p>350</p>
+        
+        <p>2018</p>
+        <p>2</p>
+        <p>задний</p>
+        <p class="color__car">Red (красный)</p>
+     
+      </div>
+     </div>
+     <p>Мойка машины в подарок!<br>
+       </p>
+    </div>
+    
+
+    <div class="price-info-wrapper">
+      <div class="price__wrapper relative flex">
+        <div class="price-name name ">
+          <p>Цена:</p>
+        </div>
+        <div class="price">
+          <p>32 000 руб./сутки</p>
+        </div>
+      </div>
+      <div class="price-info">
+       
+        <p>от 2 дней - 30000 руб./сутки</p>
+        <p>от 3 дней - 28000 руб./сутки</p>
+      </div>
+      <div class="price-info">
+        <h6 >Залог: <span> 40 000 руб.</span> </h6>
+      </div>
+    </div>
+
+    <div
+      class="flex justify-between reserv"
+      id="mustang__greenForm"
+      method="post"
+    >
+      <input
+        type="number"
+        placeholder="Кол-во дней аренды"
+        class="reserv-day-numb"
+        name="day_numb"
+        name="reserv-day-nimber"
+        form="modalForm"
+      />
+      <input
+        type="button"
+        class="button"
+        value="Забронировать"
+        id="mustang__greenBut"
+        data-modal="#reservation-modal"
+      />
+    </div>
+</div>
+
+<!--  -->
+<div
+class="catalog  element-animation-fade-right  animate__animated "
+id="porscheBoxterGreen"
+>
+<h4 class="car-name">
+  <span>Porsche Boxter</span>
+
+</h4>
+<div class="sec-car-slider relative mx-auto car-slider-grid flex">
+  <div
+  class="
+    swiper
+    car-slider-container
+    m-auto
+    porche__boxter__green-slider-container
+  "
+>
+  <div class="swiper-wrapper car-slider-wrapper">
+    <div class="swiper-slide car-slider-slide">
+      <div class="car-slider__img min-cen flex">
+        <picture>
+          <source srcset="img/porchGreen4.webp" type="image/webp">
+          <img class="m-auto" src="img/porchGreen4.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide car-slider-slide">
+      <div class="car-slider__img min-cen flex">
+        <picture>
+          <source srcset="img/porchGreen1.webp" type="image/webp">
+          <img class="m-auto" src="img/porchGreen1.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide car-slider-slide">
+      <div class="car-slider__img min-cen flex">
+        <picture>
+          <source srcset="img/porchGreen2.webp" type="image/webp">
+          <img class="m-auto" src="img/porchGreen2.jpg" />
+        </picture>
+      </div>
+    </div>
+   
+  </div>
+  <div
+    class="swiper-button-prev car-prev porche__boxter__green-prev"
+  ></div>
+  <div
+    class="swiper-button-next car-next porche__boxter__green-next"
+  ></div>
+  <div
+    class="
+      swiper-pagination
+      car-pagination
+      porche__boxter__green-pagination
+    "
+  ></div>
+ 
+</div>
+</div>
+<div
+class="
+ wiper-container swiper-mini porche-green-mini
+"
+>
+<div class="swiper-wrapper car-slider-wrapper">
+  <div class="swiper-slide car-slider-slide">
+    <div class="car-slider__img flex">
+      <picture>
+        <source srcset="img/porchGreen4.webp" type="image/webp">
+        <img class="m-auto" src="img/porchGreen4.jpg" />
+      </picture>
+    </div>
+  </div>
+  <div class="swiper-slide car-slider-slide">
+    <div class="car-slider__img flex">
+      <picture>
+        <source srcset="img/porchGreen1.webp" type="image/webp">
+        <img class="m-auto" src="img/porchGreen1.jpg" />
+      </picture>
+    </div>
+  </div>
+  <div class="swiper-slide car-slider-slide">
+    <div class="car-slider__img flex">
+      <picture>
+        <source srcset="img/porchGreen2.webp" type="image/webp">
+        <img class="m-auto" src="img/porchGreen2.jpg" />
+      </picture>
+    </div>
+  </div>
+ 
+</div>
+
+
+</div>
+
+    
+    <div class="stats-wrapper">
+     <div class="stats flex justify-between">
+       
+      <div class="stats-name name">
+        <p>Коробка:</p>
+        <p>Двигатель:</p>
+        <p>Л.С :</p>
+        <p>Год выпуска:</p>
+        <p>Кол-во мест:</p>
+        <p>Привод:</p>
+        <p>Цвет:</p>
+        
+      </div>
+      <div class="stats">
+        <p>автомат</p>
+        <p>2.0 турбо</p>
+        <p>300</p>
+        <p>2018</p>
+        <p>2</p>
+        <p>задний</p>
+        <p class="color__car">Green (зелёный)</p>
+       
+      </div>
+     </div>
+     <p>Мойка машины в подарок!<br>
+       </p>
+    
+    </div>
+    
+
+    <div class="price-info-wrapper">
+      <div class="price__wrapper relative flex">
+        <div class="price-name name ">
+          <p>Цена:</p>
+        </div>
+        <div class="price">
+          <p>28 000 руб./сутки</p>
+        </div>
+      </div>
+      <div class="price-info">
+        <p>от 2 дней - 27000 руб./сутки</p>
+        <p>от 3 дней - 26000 руб./сутки</p>
+      </div>
+      <div class="price-info">
+        <h6 >Залог: <span> 30 000 руб.</span> </h6>
+      </div>
+    </div>
+
+    <div
+      class="flex justify-between reserv"
+      id="mustang__greenForm"
+      method="post"
+    >
+      <input
+        type="number"
+        placeholder="Кол-во дней аренды"
+        class="reserv-day-numb"
+        name="day_numb"
+        name="reserv-day-nimber"
+        form="modalForm"
+      />
+      <input
+        type="button"
+        class="button"
+        value="Забронировать"
+        id="mustang__greenBut"
+        data-modal="#reservation-modal"
+      />
+    </div>
+</div>
+<!--  -->
+<div
+class="catalog  element-animation-fade-left  animate__animated "
+id="porscheBoxter"
+>
+<h4 class="car-name">
+  <span>Porsche Boxter S</span>
+    
+  
+</h4>
+<div class="sec-car-slider relative mx-auto car-slider-grid flex">
+  <div
+                      class="
+                        swiper
+                        car-slider-container
+                        m-auto
+                        porche__boxter-slider-container
+                      "
+                    >
+                      <div class="swiper-wrapper car-slider-wrapper">
+                        <div class="swiper-slide car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/porch1.webp" type="image/webp">
+                              <img class="m-auto" src="img/porch1.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/porch2.webp" type="image/webp">
+                              <img class="m-auto" src="img/porch2.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/porch3.webp" type="image/webp">
+                              <img class="m-auto" src="img/porch3.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/porch4.webp" type="image/webp">
+                              <img class="m-auto" src="img/porch4.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/porch5.webp" type="image/webp">
+                              <img class="m-auto" src="img/porch5.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="swiper-button-prev car-prev porche__boxter-prev"
+                      ></div>
+                      <div
+                        class="swiper-button-next car-next porche__boxter-next"
+                      ></div>
+                      <div
+                        class="
+                          swiper-pagination
+                          car-pagination
+                          porche__boxter-pagination
+                        "
+                      ></div>
+                      
+                    </div>
+</div>
+ <div
+                      class="
+                       swiper-container swiper-mini porche-boxter-mini
+                      "
+                    >
+                      <div class="swiper-wrapper car-slider-wrapper">
+                        <div class="swiper-slide car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/porch1.webp" type="image/webp">
+                              <img class="m-auto" src="img/porch1.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/porch2.webp" type="image/webp">
+                              <img class="m-auto" src="img/porch2.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/porch3.webp" type="image/webp">
+                              <img class="m-auto" src="img/porch3.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/porch4.webp" type="image/webp">
+                              <img class="m-auto" src="img/porch4.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/porch5.webp" type="image/webp">
+                              <img class="m-auto" src="img/porch5.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                      </div>
+                     
+                      
+                    </div>
+    
+    <div class="stats-wrapper">
+     <div class="stats flex">
+       
+      <div class="stats-name name">
+        <p>Коробка:</p>
+        <p>Двигатель:</p>
+        <p>Л.С :</p>
+        <p>Год выпуска:</p>
+        <p>Кол-во мест:</p>
+        
+        <p>Привод:</p>
+        <p>Цвет:</p>
+      </div>
+      <div class="stats">
+        <p>автомат</p>
+                          <p>3.4</p>
+                          <p>315</p>
+                          <p>2014</p>
+                          <p>2</p>
+                          <p>задний</p>
+                          <p class="color__car">Grey (серый)</p>
+                          
+      </div>
+     </div>
+     <p>Мойка машины в подарок!<br>
+       </p>
+    </div>
+    
+
+    <div class="price-info-wrapper">
+      <div class="price__wrapper relative flex">
+        <div class="price-name name ">
+          <p>Цена:</p>
+        </div>
+        <div class="price">
+          <p>23 000 руб./сутки</p>
+        </div>
+      </div>
+      <div class="price-info">
+        <p>от 2 дней - 22000 руб./сутки</p>
+        <p>от 3 дней - 21000 руб./сутки</p>
+      </div>
+      <div class="price-info">
+        <h6 >Залог: <span> 30 000 руб.</span> </h6>
+      </div>
+    </div>
+
+    <div
+      class="flex justify-between reserv"
+      id="mustang__greenForm"
+      method="post"
+    >
+      <input
+        type="number"
+        placeholder="Кол-во дней аренды"
+        class="reserv-day-numb"
+        name="day_numb"
+        name="reserv-day-nimber"
+        form="modalForm"
+      />
+      <input
+        type="button"
+        class="button"
+        value="Забронировать"
+        id="mustang__greenBut"
+        data-modal="#reservation-modal"
+      />
+    </div>
+</div>
+<!--  -->
+<div
+class="catalog  element-animation-fade-right  animate__animated "
+id="porscheBoxterBrown"
+>
+<h4 class="car-name">
+  <span>Porsche Boxter</span>
+
+</h4>
+<div class="sec-car-slider relative mx-auto car-slider-grid flex">
+  <div
+                      class="
+                        swiper
+                        car-slider-container
+                        m-auto
+                        porche__boxter__brown-slider-container
+                      "
+                    >
+                      <div class="swiper-wrapper car-slider-wrapper">
+                        <div class="swiper-slide car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/porchBrown4.webp" type="image/webp">
+                              <img class="m-auto" src="img/porchBrown4.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/porchBrown1.webp" type="image/webp">
+                              <img class="m-auto" src="img/porchBrown1.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/porchBrown2.webp" type="image/webp">
+                              <img class="m-auto" src="img/porchBrown2.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/porchBrown3.webp" type="image/webp">
+                              <img class="m-auto" src="img/porchBrown3.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                       
+                      </div>
+                      <div
+                        class="swiper-button-prev car-prev porche__boxter__brown-prev"
+                      ></div>
+                      <div
+                        class="swiper-button-next car-next porche__boxter__brown-next"
+                      ></div>
+                      <div
+                        class="
+                          swiper-pagination
+                          car-pagination
+                          porche__boxter__brown-pagination
+                        "
+                      ></div>
+                      
+                    </div>
+</div>
+<div
+class="
+ swiper-container swiper-mini porche-brown-mini
+"
+>
+<div class="swiper-wrapper car-slider-wrapper">
+  <div class="swiper-slide car-slider-slide">
+    <div class="car-slider__img flex">
+      <picture>
+        <source srcset="img/porchBrown4.webp" type="image/webp">
+        <img class="m-auto" src="img/porchBrown4.jpg" />
+      </picture>
+    </div>
+  </div>
+  <div class="swiper-slide car-slider-slide">
+    <div class="car-slider__img flex">
+      <picture>
+        <source srcset="img/porchBrown1.webp" type="image/webp">
+        <img class="m-auto" src="img/porchBrown1.jpg" />
+      </picture>
+    </div>
+  </div>
+  <div class="swiper-slide car-slider-slide">
+    <div class="car-slider__img flex">
+      <picture>
+        <source srcset="img/porchBrown2.webp" type="image/webp">
+        <img class="m-auto" src="img/porchBrown2.jpg" />
+      </picture>
+    </div>
+  </div>
+  <div class="swiper-slide car-slider-slide">
+    <div class="car-slider__img flex">
+      <picture>
+        <source srcset="img/porchBrown3.webp" type="image/webp">
+        <img class="m-auto" src="img/porchBrown3.jpg" />
+      </picture>
+    </div>
+  </div>
+ 
+</div>
+
+</div>
+
+
+    
+    <div class="stats-wrapper">
+     <div class="stats flex justify-between">
+       
+      <div class="stats-name name">
+        <p>Коробка:</p>
+        <p>Двигатель:</p>
+        <p>Л.С :</p>
+        <p>Год выпуска:</p>
+        <p>Кол-во мест:</p>
+        
+        <p>Привод:</p>
+        <p>Цвет:</p>
+      </div>
+      <div class="stats">
+        <p>автомат</p>
+        <p>2.7</p>
+        <p>265</p>
+        <p>2014</p>
+        <p>2</p>
+        <p>задний</p>
+        <p class="color__car">Brown (коричневый)</p>
+        
+      </div>
+     </div>
+     <p>Мойка машины в подарок!<br>
+       </p>
+  
+    </div>
+    
+
+    <div class="price-info-wrapper">
+      <div class="price__wrapper relative flex">
+        <div class="price-name name ">
+          <p>Цена:</p>
+        </div>
+        <div class="price">
+          <p>22 000 руб./сутки</p>
+        </div>
+      </div>
+      <div class="price-info">
+        <p>от 2 дней - 21000 руб./сутки</p>
+        <p>от 3 дней - 20000 руб./сутки</p>
+      </div>
+      <div class="price-info">
+        <h6 >Залог: <span> 30 000 руб.</span> </h6>
+      </div>
+    </div>
+
+    <div
+      class="flex justify-between reserv"
+      id="mustang__greenForm"
+      method="post"
+    >
+      <input
+        type="number"
+        placeholder="Кол-во дней аренды"
+        class="reserv-day-numb"
+        name="day_numb"
+        name="reserv-day-nimber"
+        form="modalForm"
+      />
+      <input
+        type="button"
+        class="button"
+        value="Забронировать"
+        id="mustang__greenBut"
+        data-modal="#reservation-modal"
+      />
+    </div>
+</div>
+<!--  -->
+<div
+class="catalog  element-animation-fade-left  animate__animated "
+id="mercedes"
+>
+<h4 class="car-name">
+  <span>Mercedes Benz E 400</span>
+    
+  
+</h4>
+<div class="sec-car-slider relative mx-auto car-slider-grid flex">
+  <div
+  class="
+    swiper
+    car-slider-container
+    m-auto
+    mercedes-slider-container
+  "
+>
+  <div class="swiper-wrapper car-slider-wrapper">
+    <div class="swiper-slide car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/mercedes1.webp" type="image/webp">
+          <img class="m-auto" src="img/mercedes1.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/mercedes2.webp" type="image/webp">
+          <img class="m-auto" src="img/mercedes2.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/mercedes3.webp" type="image/webp">
+          <img class="m-auto" src="img/mercedes3.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/mercedes5.webp" type="image/webp">
+          <img class="m-auto" src="img/mercedes5.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/mercedes6.webp" type="image/webp">
+          <img class="m-auto" src="img/mercedes6.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/mercedes7.webp" type="image/webp">
+          <img class="m-auto" src="img/mercedes7.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/mercedes8.webp" type="image/webp">
+          <img class="m-auto" src="img/mercedes8.jpg" />
+        </picture>
+      </div>
+    </div>
+   
+  </div>
+  <div
+    class="swiper-button-prev car-prev mercedes-prev"
+  ></div>
+  <div
+    class="swiper-button-next car-next mercedes-next"
+  ></div>
+  <div
+    class="
+      swiper-pagination
+      car-pagination
+      mercedes-pagination
+    "
+  ></div>
+ 
+</div>
+</div>
+<div
+  class="
+  swiper-container swiper-mini mercedes-mini
+  "
+>
+  <div class="swiper-wrapper car-slider-wrapper">
+    <div class="swiper-slide car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/mercedes1.webp" type="image/webp">
+          <img class="m-auto" src="img/mercedes1.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/mercedes2.webp" type="image/webp">
+          <img class="m-auto" src="img/mercedes2.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/mercedes3.webp" type="image/webp">
+          <img class="m-auto" src="img/mercedes3.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/mercedes5.webp" type="image/webp">
+          <img class="m-auto" src="img/mercedes5.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/mercedes6.webp" type="image/webp">
+          <img class="m-auto" src="img/mercedes6.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/mercedes7.webp" type="image/webp">
+          <img class="m-auto" src="img/mercedes7.jpg" />
+        </picture>
+      </div>
+    </div>
+    <div class="swiper-slide car-slider-slide">
+      <div class="car-slider__img flex">
+        <picture>
+          <source srcset="img/mercedes8.webp" type="image/webp">
+          <img class="m-auto" src="img/mercedes8.jpg" />
+        </picture>
+      </div>
+    </div>
+   
+  </div>
+  
+ 
+
+ 
+</div>
+    
+    <div class="stats-wrapper">
+     <div class="stats flex">
+       
+      <div class="stats-name name">
+        <p>Коробка:</p>
+        <p>Двигатель:</p>
+        <p>Л.С :</p>
+        <p>Год выпуска:</p>
+        <p>Кол-во мест:</p>
+        <p>Цвет:</p>
+      </div>
+      <div class="stats">
+        <p>автомат</p>
+        <p>3.0</p>
+        <p>333</p>
+        <p>2018</p>
+        <p>4</p>
+        <p class="color__car">Cиний сатин</p>
+        <p>полный</p>
+      </div>
+     </div>
+     <p>Мойка машины в подарок!<br>
+       </p>
+
+    </div>
+    
+
+    <div class="price-info-wrapper">
+      <div class="price__wrapper relative flex">
+        <div class="price-name name ">
+          <p>Цена:</p>
+        </div>
+        <div class="price">
+          <p>28 000 руб./сутки</p>
+        </div>
+      </div>
+      <div class="price-info">
+        <p>от 2 дней - 27000 руб./сутки</p>
+                        <p>от 3 дней - 26000 руб./сутки</p>
+      </div>
+      <div class="price-info">
+        <h6 >Залог: <span> 30 000 руб.</span> </h6>
+      </div>
+    </div>
+
+    <div
+      class="flex justify-between reserv"
+      id="mustang__greenForm"
+      method="post"
+    >
+      <input
+        type="number"
+        placeholder="Кол-во дней аренды"
+        class="reserv-day-numb"
+        name="day_numb"
+        name="reserv-day-nimber"
+        form="modalForm"
+      />
+      <input
+        type="button"
+        class="button"
+        value="Забронировать"
+        id="mustang__greenBut"
+        data-modal="#reservation-modal"
+      />
+    </div>
+</div>             
+                <!--  -->
+                <!-- <div
+                class="catalog  element-animation-fade-left  animate__animated "
+                id="bmwx5"
+                >
+                <h4 class="car-name">
+                  <span>BMW X5M</span>
+                
+                </h4>
+                <div class="sec-car-slider relative mx-auto car-slider-grid flex">
+                  <div
+                      class="
+                        swiper
+                        sec-car-slider-container
+                        m-auto
+                        bmw__x5m-slider-container
+                      "
+                    >
+                      <div class="swiper-wrapper sec-car-slider-wrapper">
+                        <div class="swiper-slide sec-car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/bmw2.webp" type="image/webp">
+                              <img class="m-auto" src="img/bmw2.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide sec-car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/bmw.webp" type="image/webp">
+                              <img class="m-auto" src="img/bmw.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide sec-car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/bmw3.webp" type="image/webp">
+                              <img class="m-auto" src="img/bmw3.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide sec-car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/bmw4.webp" type="image/webp">
+                              <img class="m-auto" src="img/bmw4.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="swiper-slide sec-car-slider-slide">
+                          <div class="car-slider__img flex">
+                            <picture>
+                              <source srcset="img/bmw5.webp" type="image/webp">
+                              <img class="m-auto" src="img/bmw5.jpg" />
+                            </picture>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="
+                          swiper-button-prev
+                          sec-car-prev
+                          bmw__x5m-slider-prev
+                        "
+                      ></div>
+                      <div
+                        class="
+                          swiper-button-next
+                          sec-car-next
+                          bmw__x5m-slider-next
+                        "
+                      ></div>
+                      <div
+                        class="
+                          swiper-pagination
+                          sec-car-pagination
+                          bmw__x5m-slider-pagination
+                        "
+                      ></div>
+                     
+                    </div>
+                </div>
+                <div
+                class="
+                swiper-container swiper-mini bmw-mini
+                "
+              >
+                <div class="swiper-wrapper sec-car-slider-wrapper">
+                  <div class="swiper-slide sec-car-slider-slide">
+                    <div class="car-slider__img flex">
+                      <picture>
+                        <source srcset="img/bmw2.webp" type="image/webp">
+                        <img class="m-auto" src="img/bmw2.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="swiper-slide sec-car-slider-slide">
+                    <div class="car-slider__img flex">
+                      <picture>
+                        <source srcset="img/bmw.webp" type="image/webp">
+                        <img class="m-auto" src="img/bmw.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="swiper-slide sec-car-slider-slide">
+                    <div class="car-slider__img flex">
+                      <picture>
+                        <source srcset="img/bmw3.webp" type="image/webp">
+                        <img class="m-auto" src="img/bmw3.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="swiper-slide sec-car-slider-slide">
+                    <div class="car-slider__img flex">
+                      <picture>
+                        <source srcset="img/bmw4.webp" type="image/webp">
+                        <img class="m-auto" src="img/bmw4.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="swiper-slide sec-car-slider-slide">
+                    <div class="car-slider__img flex">
+                      <picture>
+                        <source srcset="img/bmw5.webp" type="image/webp">
+                        <img class="m-auto" src="img/bmw5.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                </div>
+               
+               
+              </div>
+                    
+                    <div class="stats-wrapper">
+                     <div class="stats flex justify-between">
+                       
+                      <div class="stats-name name">
+                        <p>Коробка:</p>
+                        <p>Двигатель:</p>
+                        <p>Л.С :</p>
+                        <p>Год выпуска:</p>
+                        <p>Кол-во мест:</p>
+                        <p>Цвет:</p>
+                      </div>
+                      <div class="stats">
+                        <p>автомат</p>
+                        <p>4.4</p>
+                        <p>600</p>
+                        <p>2020</p>
+                        <p>5</p>
+                        <p class="color__car">Grey  (серый)</p>
+                      </div>
+                     </div>
+                
+                     <p>Мойка машины в подарок!<br />
+                       </p>
+                    </div>
+                    
+                
+                    <div class="price-info-wrapper">
+                      <div class="price__wrapper relative flex">
+                        <div class="price-name name ">
+                          <p>Цена:</p>
+                        </div>
+                        <div class="price">
+                          <p>45 000 руб./сутки</p>
+                        </div>
+                      </div>
+                      <div class="price-info">
+                        <p>от 2 дней - 44000 руб./сутки</p>
+                          <p>от 3 дней - 43000 руб./сутки</p>
+                      </div>
+                      <div class="price-info">
+                        <h6 >Залог: <span> 100 000 руб.</span> </h6>
+                      </div>
+                      <p class="warning">
+                        ВНИМАНИЕ. Данный автомобиль можно арендовать при стаже
+                        вождения от 5 лет и возрасте водителя от 23 лет.
+                      </p>
+                    </div>
+                
+                    <div
+                      class="flex justify-between reserv reserv-warning"
+                      id="mustang__greenForm"
+                      method="post"
+                    >
+                      <input
+                        type="number"
+                        placeholder="Кол-во дней аренды"
+                        class="reserv-day-numb"
+                        name="day_numb"
+                        name="reserv-day-nimber"
+                        form="modalForm"
+                      />
+                      <input
+                        type="button"
+                        class="button"
+                        value="Забронировать"
+                        id="mustang__greenBut"
+                        data-modal="#reservation-modal"
+                      />
+                    </div>
+                </div>                -->
+              
+              <!--  -->
+             
+              </div>
+            </div>
+          </section>
+          <section id="conditions" class="third-sec">
+            <div class="contain animate__animated element-animation-fade-left relative">
+              <img src="img/dec-therd-sec-b-l.svg" class="dec absolute" />
+              <img src="img/dec-third-sec-t-r.svg" class="dec2 absolute" />
+              <img src="img/dec-third-sec-t-l.svg" class="dec4 absolute" />
+              <img src="img/dec-third-sec-b-r.svg" class="dec3 absolute" />
+              <h2 class="text-center lg:text-left">
+                Условия проката автомобилей
+              </h2>
+              <div
+                class="
+                  info__wrapper
+                  flex
+                  justify-between
+                  flex-col-reverse
+                  items-center
+                  lg:flex-row
+                "
+              >
+                <div class="info w-full">
+                  <p class="mb-8 text-center lg:text-left">
+                    Простые условия аренды. <br>
+                    Без ограничений по возрасту и водительскому стажу.
+                  </p>
+                  <div class="info__items grid justify-center m-auto">
+                    <div class="item">
+                      <div class="item__head flex">
+                        <img src="img/choice.png" />
+                        <h5><span> Выбор</span></h5>
+                      </div>
+                      <p>
+                        Какой кабриолет подходит именно Вам? Выберите автомобиль
+                        и срок аренды.
+                      </p>
+                    </div>
+                    <div class="item">
+                      <div class="item__head flex">
+                        <img src="img/reserv.png" />
+                        <h5><span> Резервирование</span></h5>
+                      </div>
+                      <p>
+                        Менеджер подтверждает бронирование кабриолета на
+                        желаемые даты аренды.
+                      </p>
+                    </div>
+                    <div class="item">
+                      <div class="item__head flex">
+                        <img style="max-width: 27px" src="img/documents.png" />
+                        <h5><span> Минимум документов</span></h5>
+                      </div>
+                      <p>
+                        В назначенный день желанный автомобиль будет ждать Вас в
+                        выбранном месте! Осталось только подписать договор.
+                      </p>
+                    </div>
+                    <div class="item">
+                      <div class="item__head flex">
+                        <img src="img/sun.png" />
+                        <h5><span> Открывайте крышу!</span></h5>
+                      </div>
+                      <p>Море, солнце и кабриолет — отличное сочетание!</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="img-wrapp relative mb-3">
+                  <picture>
+                    <source srcset="img/cars2.webp" type="image/webp" />
+                    <img class="absolute" src="img/cars2.jpg" />
+                  </picture>
+                </div>
+              </div>
+              <div class="faq__container flex flex-col">
+                <h3 class="m-auto">
+                  <span>Ответы на часто задаваемые вопросы</span>
+                </h3>
+                <div class="answer__container m-auto relative">
+                  <div class="answer__head flex justify-between">
+                    <p>Предоплата</p>
+                    <img class="answer_but" src="img/arrow2.png" />
+                  </div>
+                  <div class="answer">
+                    Для бронирования автомобиля на подходящие даты вносится
+                    предоплата:
+                    <ul>
+                      <li>
+                        При аренде до 3 суток - 50% от стоимости бронирования.
+                      </li>
+                      <li>
+                        При аренде от 3-х суток - депозит равный стоимости 1
+                        суток.
+                      </li>
+                    </ul>
+                    В случае отмены бронирования - предоплата не возвращается.
+                  </div>
+                </div>
+                <div class="answer__container m-auto relative">
+                  <div class="answer__head flex justify-between">
+                    <p>Залог (Страховой депозит)</p>
+                    <img class="answer_but" src="img/arrow2.png" />
+                  </div>
+                  <div class="answer">
+                    <p>
+                      Для аренды автомобиля требуется внесение возвратного
+                      страхового депозита, размер которого зависит от выбранного
+                      автомобиля.
+                    </p>
+                    <p>
+                      Залог - это минимальная гарантия нашего и вашего
+                      спокойствия за автомобиль. При возвращении машины без
+                      повреждений, полученных штрафов и прочих неприятностей
+                      залог возвращается в полном объеме.
+                    </p>
+                  </div>
+                </div>
+                <div class="answer__container m-auto relative">
+                  <div class="answer__head flex justify-between">
+                    <p>Второй водитель</p>
+                    <img class="answer_but" src="img/arrow2.png" />
+                  </div>
+                  <div class="answer">
+                    <p>
+                      Дополнительный водитель должен быть заявлен до момента
+                      начала аренды автомобиля.
+                    </p>
+                  </div>
+                </div>
+                <div class="answer__container m-auto relative">
+                  <div class="answer__head flex justify-between">
+                    <p>Доставка/сдача автомобиля</p>
+                    <img class="answer_but" src="img/arrow2.png" />
+                  </div>
+                  <div class="answer">
+                    <p>
+                      Мы можем доставить или забрать автомобиль в любое удобное
+                      для вас место, в зависимости от местоположения и
+                      выбранного автомобиля.
+                    </p>
+                    <p>
+                      Прием и сдача автомобиля происходит по адресу: г. Адлер.
+                      Ул. Морской бульвар д.1
+                    </p>
+                    <p>Мы можем доставить автомобиль прямо к вам:</p>
+                    <p>г. Адлер - 500 ₽.</p>
+                    <p>г. Сочи -1500 ₽.</p>
+                    <p>Красная поляна -2000 ₽.</p>
+                    <p>Аэропорт Сочи (Адлер) - 1000 ₽.</p>
+                    <p>
+                      В момент возврата количество топлива в автомобиле должно
+                      быть такое же, как при начале аренды.
+                    </p>
+                    <p>
+                      Автомобиль возвращается чистым внутри и снаружи.
+                      (стоимость комплексной мойки - 700 рублей)
+                    </p>
+                  </div>
+                </div>
+                <div class="answer__container m-auto relative">
+                  <div class="answer__head flex justify-between">
+                    <p>Территория использования</p>
+                    <img class="answer_but" src="img/arrow2.png" />
+                  </div>
+                  <div class="answer">
+                    <p>
+                      Аренда автомобиля предоставляется на территории Сочи,
+                      Адлера, Красной поляны. Выезд за пределы разрешенной
+                      территории допустим, но оговаривается в индивидуальном
+                      порядке.
+                    </p>
+                    <p>Выезд в Абхазию - запрещен.</p>
+                    <p>
+                      Съезд с асфальтированных дорог общего пользования -
+                      запрещен.
+                    </p>
+                    <p>
+                      Индивидуальные условия для выезда в Крым, Новороссийск и Геленджик.
+                    </p>
+                  </div>
+                </div>
+                <p class="text-center">
+                  <span> Мы гарантируем быстрое</span> оформление и
+                  <span> лучшее </span>обслуживание, при соблюдении простых
+                  правил и условий аренды.
+                </p>
+                <a class="button m-auto feedBut" href="#contacts">Свяжитесь с нами</a>
+              </div>
+            </div>
+          </section>
+          <section id="rullsSec" class="fourth-sec">
+            <div class="contain  animate__animated element-animation-fade-right flex flex-row-reverse relative">
+              <img src="img/ruls-r-t.svg" class="dec absolute" />
+              <img src="img/rulls-r-b.svg" class="dec2 absolute" />
+              <div class="ruls__content">
+                <h2 >Правила проката</h2>
+                <ul>
+                  <li>
+                    <span>Соблюдать</span> правила ПДД и иные требования
+                    действующего законодательства РФ.
+                  </li>
+                  <li>
+                    <span>Не</span> использовать авто для любых спортивных
+                    соревнований (дрифт, уличные гонки).
+                  </li>
+                                    <li>
+                    <span>Не</span> передавать авто третьим лицам. Передача авто
+                    в управление третьему лицу возможна под ответственность
+                    Арендатора за дополнительную плату при наличии письменного
+                    согласования Арендодателя (WhatsApp, Telegram)
+                  </li>
+                  <li>
+                    <span>Не</span> заправлять автомобиль топливом ниже АИ-100
+                  </li>
+                  <li><span>Запрещено</span> курение в автомобилях.</li>
+                  <li>
+                    <span>Запрещена</span> перевозка взрывоопасных и
+                    легковоспламеняющихся веществ.
+                  </li>
+                  <li>
+                    <span>Запрещена</span> перевозка любых предметов и веществ,
+                    запрещённых в РФ
+                  </li>
+                  <li>
+                    <span>Запрещено</span> управление автомобилем в состоянии
+                    алкогольного, наркотического опьянения, а также интоксикации
+                    при действии медицинских препаратов или противопоказаний к
+                    управлению автомобилем.
+                  </li>
+                  <li>
+                    <span>Незамедлительно</span> сообщать о неисправностях, о
+                    повреждениях автомобиля, о ДТП, об отсутствии каких- либо
+                    документов, а также о иных ситуациях Арендодателю.
+                  </li>
+                  <li>
+                    <span>В</span> случае ДТП, Арендатор оформляет все
+                    необходимые документы для ГИБДД и Страховой компании.
+                  </li>
+                  <li>
+                    <span>По</span> окончании срока проката обеспечить
+                    первоначальную внешнюю чистоту салона и кузова.
+                  </li>
+                </ul>
+              </div>
+              <div class="image md:block hidden">
+                <picture>
+                  <source srcset="img/car4.webp" type="image/webp" />
+                  <img src="img/car3.jpg" />
+                </picture>
+              </div>
+            </div>
+          </section>
+          <section class="certificate">
+            <div class="certificate__container">
+              <div class="certificate-content">
+                <div class="certificate-content__left-block" class="relative">
+                  <img src="img/cert-left-bot.svg" class="absolute line-deleft-bot">
+                  <img src="img/cert-left-top.svg" class="absolute line-deleft-top">
+                  <div class="certificate-content__left-block__container">
+
+                    <h2>Подарочный сертификат <span>купи и подари близким</span></h2>
+                    <p>Не знаете чем побаловать близкого, у которого есть все? Хотите подарить что-то действительно впечатляющее? В таком случае, у нас есть для вас идеальное предложение.</p>
+                    <a class="button"  data-modal="#certificat-modal">Купить сертификат</a>
+                  </div>
+                </div>
+                <div class="certificate-content__right-block">
+                  <img src="img/cert-right.svg" class="absolute line-deright">
+                  <div class="cerficate-image__wrapper">
+                    <picture>
+                      <source srcset="img/certificate.webp" type="image/webp" />
+                      <img src="img/certificate.jpg" />
+                    </picture>
+                  </div>
+                </div>
+              </div> 
+            </div>
+          </section>
+          <section class="fifth-sec relative" id="reviews">
+            <div class="dec-wrapp relative">
+
+              <img src="img/dec-review-t.svg" class="dec absolute">
+              <img src="img/dec-review-l.svg" class="dec2 absolute">
+              <img src="img/dec-review-r.svg" class="dec3 absolute">
+              <h2 class="text-center animate__animated element-animation-fade-top">Отзывы</h2>
+              <div class="review-slider swiper relative">
+                <div class="review-wrapper swiper-wrapper">
+                  <div class="review-slide swiper-slide">
+                    <div class="review-img__wrapper">
+                      <picture>
+                        <source srcset="img/review.webp" type="image/webp" />
+                        <img src="img/review.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="review-slide swiper-slide">
+                    <div class="review-img__wrapper">
+                      <picture>
+                        <source srcset="img/review2.webp" type="image/webp" />
+                        <img src="img/review2.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="review-slide swiper-slide">
+                    <div class="review-img__wrapper">
+                      <picture>
+                        <source srcset="img/review3.webp" type="image/webp" />
+                        <img src="img/review3.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="review-slide swiper-slide">
+                    <div class="review-img__wrapper">
+                      <picture>
+                        <source srcset="img/review4.webp" type="image/webp" />
+                        <img src="img/review4.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="review-slide swiper-slide">
+                    <div class="review-img__wrapper">
+                      <picture>
+                        <source srcset="img/review5.webp" type="image/webp" />
+                        <img src="img/review5.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="review-slide swiper-slide">
+                    <div class="review-img__wrapper">
+                      <picture>
+                        <source srcset="img/review6.webp" type="image/webp" />
+                        <img src="img/review6.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="review-slide swiper-slide">
+                    <div class="review-img__wrapper">
+                      <picture>
+                        <source srcset="img/review7.webp" type="image/webp" />
+                        <img src="img/review7.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="review-slide swiper-slide">
+                    <div class="review-img__wrapper">
+                      <picture>
+                        <source srcset="img/review8.webp" type="image/webp" />
+                        <img src="img/review8.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="review-slide swiper-slide">
+                    <div class="review-img__wrapper">
+                      <picture>
+                        <source srcset="img/review9.webp" type="image/webp" />
+                        <img src="img/review9.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="review-slide swiper-slide">
+                    <div class="review-img__wrapper">
+                      <picture>
+                        <source srcset="img/review10.webp" type="image/webp" />
+                        <img src="img/review10.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="review-slide swiper-slide">
+                    <div class="review-img__wrapper">
+                      <picture>
+                        <source srcset="img/review11.webp" type="image/webp" />
+                        <img src="img/review11.jpg" />
+                      </picture>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-button-prev review-prev"></div>
+                <div class="swiper-button-next review-next"></div>
+                <div class="swiper-pagination review-pagination"></div>
+              </div>
+            </div>
+            <div
+              class="
+                rev-inst
+                flex
+                justify-between
+                mx-auto
+                flex-col
+                sm:flex-row
+                items-center
+              "
+            >
+              <p class="mb-3 sm:mb-0">Больше отзывов в нашем инстаграме</p>
+              <a
+                class="flex button"
+                href="https://www.instagram.com/sochi.cabriolet/"
+                ><img src="img/rev-inst.png" />sochi.cabriolet</a
+              >
+            </div>
+          </section>
+          <section class="six-sec" id="about">
+            <div
+              class="
+                contain
+                flex
+                lg:flex-row-reverse
+                justify-center
+                align-center
+                flex-col
+                animate__animated element-animation-fade-left
+              "
+            >
+              <div class="content w-full flex flex-col">
+                <div class="content-wrapp m-auto">
+                  <h2 class="animate__animated element-animation-fade-top">О нас</h2>
+                  <p>
+                    В нашей компании мы стараемся дать вам свободу познать и увидеть как можно больше. Мы делаем все возможное, чтобы найти для вас правильный автомобиль и предоставить возможность комфортного проката от начала и до конца.
+                  </p>
+                  <p>
+                    Каждый автолюбитель просто обязан хоть один раз в жизни узнать что значит кабриолет премиум-класса и ощутить те неповторимые эмоции, которые он дарит!
+                  </p>
+                </div>
+              </div>
+              <div class="images w-full relative grid grid-cols-2">
+                <div class="image w-full ">
+                  <picture>
+                    <source srcset="img/car4.webp" type="image/webp" />
+                    <img src="img/car4.jpg" />
+                  </picture>
+                </div>
+                <div class="image w-full ">
+                  <picture>
+                    <source srcset="img/car5.webp" type="image/webp" />
+                    <img src="img/car5.jpg" />
+                  </picture>
+                </div>
+                <div class="image w-full ">
+                  <picture>
+                    <source srcset="img/car6.webp" type="image/webp" />
+                    <img src="img/car6.jpg" />
+                  </picture>
+                </div>
+                <div class="image w-full ">
+                  <picture>
+                    <source srcset="img/car7.webp" type="image/webp" />
+                    <img src="img/car7.jpg" />
+                  </picture>
+                </div>
+                <div class="text flex">
+                  <p class="m-auto text-center">С любовью к автомобилям!</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="sev-sec">
+            <div class="contain text-center">
+              <h2 class=" animate__animated element-animation-fade-top">Мы готовы к сотрудничеству</h2>
+              <p>Мы открыты к сотрудничеству с:</p>
+              <div class="team flex justify-around mx-auto items-center">
+                <div class="flex justify-center items-center">
+                  <img style="height: 41px" src="img/blog.png" /> Блогерами
+                </div>
+                <div class="flex justify-center items-center">
+                  <img class="team_invest" src="img/invest.png" />Инвесторами
+                </div>
+                <div class="flex justify-center items-center">
+                  <img class="team_photo" src="img/photo.png" />Фотографами
+                </div>
+              </div>
+              <div
+                class="
+                  offer
+                  flex
+                  justify-between
+                  m-auto
+                  sm:flex-row
+                  flex-col
+                  items-center
+                "
+              >
+                <p class="mb-4 text-center sm:text-left sm:mb-0">
+                  Если у Вас есть интересное предложение, свяжитесь с нами!
+                </p>
+                <a href="#contacts" class="button w-full feedBut">Свяжитесь с нами</a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer class="mt-auto text-center" id="contacts">
+        <div
+          class="
+            foot-container
+            ralative
+            w-full
+            m-auto
+            flex flex-col
+            justify-between
+          "
+        >
+          <div class="top-block">
+            <h2 class="uppercase relative w-full mx-auto animate__animated element-animation-fade-top">
+              Готовы заказать авто?
+            </h2>
+            <p>Или остались вопросы?</p>
+            <div class="form-wrapper">
+              <form
+                action="php/mailFeedbackForm.php"
+                class="
+                  w-full
+                  flex
+                  justify-between
+                  lg:flex-row
+                  flex-col
+                  items-center
+                "
+                method="post"
+                id="feedForm"
+              >
+                <input
+                  type="text"
+                  placeholder="Имя"
+                  required
+                  name="user-name"
+                  id="feedUserName"
+                />
+                <input
+                  type="tel"
+                  name="user-phone"
+                  class="customerPhoneNumber"
+                  placeholder="+7(---) --- -- --"
+                  required
+                  id="feedUserPhone"
+                />
+                <input
+                  type="submit"
+                  class="cursor-pointer btn-animate"
+                  value="Отправить"
+                  id="feedSumb"
+                />
+              </form>
+            </div>
+          </div>
+          <div class="bot-block">
+            <h3>Мы всегда на связи</h3>
+            <div
+            class="
+              contacts-wrapp
+              w-full
+              flex-col flex
+            "
+          >
+            <div class="contact flex">
+              <img 
+                style="max-width: 34px; height: 34px"
+                src="img/loc.png"
+              />Сочи, Адлерский район, ул. Морской бульвар д.1
+            </div>
+            <div class="bot-contact flex lg:flex-row flex-col">
+
+              <div class="contact">
+                <a href="tel:+79087370007"><img
+                  style="max-width: 31px; height: 31px"
+                  src="img/tel.png"
+                />+7 908 737-00-07</a>
+                
+              </div>
+              <div class="contact">
+                <a href="mailto:info@sochi-cabriolet.ru"><img
+                  style="max-width: 32px; height: 32px"
+                  src="img/mail.png"
+                />info@sochi-cabriolet.ru
+              </div></a>
+                
+              <div class="contact">
+                <a href="https://www.instagram.com/sochi.cabriolet/"
+                  ><img
+                    style="max-width: 30px; height: 30px"
+                    src="img/inst.png"
+                /> sochi.cabriolet</a>
+              </div>
+            </div>
+          </div>
+          </div>
+          <a
+            href="#autoPark"
+            class="green-but absolute flex items-center justify-center m-auto"
+            >Забронировать автомобиль</a
+          >
+        </div>
+      </footer>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
