@@ -2977,7 +2977,7 @@ header .mobile-menu-wrapper.open {
 .dicsount p {
   font-weight: 700 !important;
   width: 130px;
-  background: linear-gradient(86.16deg, #e7812e 2.31%, #b8af36 102.69%);
+  background: #11c52d;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -3056,7 +3056,7 @@ header .mobile-menu-wrapper.open {
 
 .dis {
   position: absolute;
-  top: -105px;
+  top: -130px;
   width: 319px;
 }
 
@@ -3064,6 +3064,10 @@ header .mobile-menu-wrapper.open {
   .dis {
     display: none;
   }
+}
+
+.dis--warning {
+  top: -105px;
 }
 
 .price-info .dicsount {
