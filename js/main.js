@@ -660,3 +660,47 @@ $(document).ready(function () {
     });
   }
 });
+
+
+
+
+// DISCOUNT TIMER
+
+function contador() {
+  var hr = localStorage.getItem("hr");
+  var mm = localStorage.getItem("mm");
+  var ss = localStorage.getItem("ss");
+  if (!hr || !mm || !ss) {
+    
+     hr = "3";
+     mm = "59";
+     ss = "59"
+
+     localStorage.setItem("hr", hr);
+     localStorage.setItem("mm", mm);
+     localStorage.setItem("ss", ss);
+  }
+  var interval = setInterval(function () {
+     if ( hr == 0 && mm == 0 && ss == 0) {
+        clearInterval(interval);
+
+     }
+     ss--;
+     if (ss == 0) {
+        ss = 59;
+        mm--;
+        if (mm == 0) {
+           mm = 59;
+           hr--;
+        }
+     }
+     if (hr.toString().length < 2) hr = "0" + hr;
+     if (mm.toString().length < 2) mm = "0" + mm;
+     if (ss.toString().length < 2) ss = "0" + ss;
+     $(".timer__count").html("<span>" + hr + "</span> : <span>" + mm + "</span>");
+     localStorage.setItem("hr", hr);
+     localStorage.setItem("mm", mm);
+     localStorage.setItem("ss", ss);
+  }, 1000);
+}
+window.onload = contador
